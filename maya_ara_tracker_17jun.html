@@ -197,6 +197,12 @@
       <td><span class="ok">Low</span> — docs ready</td>
     </tr>
     <tr>
+      <td class="u">B-26-03</td><td>Jonathan (SC)</td>
+      <td>Verify if start actually happened (claimed w/c 15 Jun) — confirm maincon defect agreement + batch assignment</td>
+      <td>Enter active batch</td>
+      <td><span class="warn">⚠ Unconfirmed</span> — claimed as "starting this week" on 15 Jun, not addressed in 17 Jun response</td>
+    </tr>
+    <tr>
       <td class="u">A-21-06</td><td>Sam Leong</td>
       <td>Push owner to sign design plan (defect ongoing — owner condition)</td>
       <td>Design plan signed → can pursue permit in parallel with defect</td>
@@ -222,7 +228,33 @@
     <tr><td style="font-weight:600">3 — Developer defect cases</td><td>Consultant coordinates with developer rep + owner simultaneously to unblock defect sign-off</td></tr>
     <tr><td style="font-weight:600">4 — Weekly review</td><td>Units with prolonged inactivity flagged at weekly sync</td></tr>
   </table></div>
-  <p style="font-size:12px;color:#555;margin-top:8px">Units in this bucket: A-25-07, A-22-07, A-20-07, A-23A-08, A-23A-09, A-27-09, A-02-02, A-13-06, A-12-06</p>
+  <p style="font-size:12px;color:#555;margin:10px 0 8px">All 9 units have been stuck since at least the 9 Jun baseline (8+ days by 17 Jun). Jonathan confirmed some are already with SDP — but did not specify which. <b>14-day cutoff = 23 Jun</b> for units stuck since 9 Jun. Verify SDP status per unit before that date.</p>
+  <div class="tbl-wrap"><table class="jc-table">
+    <tr><th>Unit</th><th>Consultant</th><th>Stuck since ≥</th><th>Days elapsed (17 Jun)</th><th>SDP escalated?</th></tr>
+    <tr><td class="u">A-25-07</td><td>Yit Soon</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span></td></tr>
+    <tr><td class="u">A-22-07</td><td>Yit Soon</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span></td></tr>
+    <tr><td class="u">A-20-07</td><td>Yit Soon</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span> — also needs developer VP + designer assigned (not a standard sign-off case)</td></tr>
+    <tr><td class="u">A-23A-08</td><td>Elene</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span></td></tr>
+    <tr><td class="u">A-23A-09</td><td>Elene</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span> — has defect step before sign-off</td></tr>
+    <tr><td class="u">A-27-09</td><td>Kavita</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span></td></tr>
+    <tr><td class="u">A-02-02</td><td>Karen</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span></td></tr>
+    <tr><td class="u">A-13-06</td><td>Sam Leong</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span></td></tr>
+    <tr><td class="u">A-12-06</td><td>Sam Leong</td><td>9 Jun</td><td>8</td><td><span class="warn">⚠ Verify</span></td></tr>
+  </table></div>
+</div>
+
+<!-- LUQMAN/LINA -->
+<div class="blind">
+  <h3>⚠ Luqman / Lina — consultant non-reporting (3 units frozen since 9 Jun)</h3>
+  <p style="font-size:13px;margin:4px 0 10px">B-12-07 and A-27-05 are under Luqman. A-19-02 is under Lina. Zero WIP movement since the 9 Jun baseline — now 8+ days. Jonathan named this in his 15 Jun update but his 17 Jun response did not define any consequence if the silence continues. Chasing alone has not worked.</p>
+  <div class="tbl-wrap"><table class="jc-table">
+    <tr><th>Unit</th><th>Consultant</th><th>Blocker</th><th>Days frozen (from 9 Jun)</th></tr>
+    <tr><td class="u">B-12-07</td><td>Luqman / Zaf</td><td>Pending client confirmation. No WIP updates.</td><td>8+</td></tr>
+    <tr><td class="u">A-27-05</td><td>Luqman</td><td>Design plan signed; pending confirmation. No WIP updates.</td><td>8+</td></tr>
+    <tr><td class="u">A-19-02</td><td>Lina / Adibah</td><td>Pending client confirmation. No WIP updates.</td><td>8+</td></tr>
+  </table></div>
+  <p style="font-size:13px;margin:10px 0 4px"><b>Gap:</b> The design plan escalation rule covers owner behaviour. There is no defined consequence for a consultant who goes dark. Jonathan needs to name one: by what date does a non-reporting consultant get escalated to Jonathan directly, and what happens if they still don't surface?</p>
+  <p style="font-size:12px;color:#555;margin:0">➜ <b>Raise with Jonathan:</b> If Luqman/Lina have no update by [date], what is the escalation — replacement, formal warning, or direct owner contact bypassing the consultant?</p>
 </div>
 
 <!-- POST-DEMOB PLAN -->
@@ -327,7 +359,7 @@ const conf = [
   ["A-27-02","Kavita","—","permit","Design plan signed. Defects done. Permit submitted — waiting approval.","Permit approval → schedule (this week)"],
   ["A-27-09","Kavita","—","defect","Defects ongoing. Design plan unsigned. Permit pending.","Defect completion → owner sign-off → permit"],
   ["A-26-02","Karen","—","batch","Confirmed Batch 17. Kicked off 15 Jun. Lex capacity OK.","In Batch 17 ✓"],
-  ["B-26-03","Jonathan","—","permit","All docs ready. Maincon to agree defect + reno concurrently.","Confirm defect plan → start reno"],
+  ["B-26-03","Jonathan","—","permit","Start claimed for w/c 15 Jun — NOT YET CONFIRMED. All docs ready; maincon must agree defect + reno plan concurrently.","⚠ Verify with Jonathan: has this started? Confirm batch assignment."],
   ["A-02-02","Karen","—","defect","Defects ongoing. Design plan unsigned.","Resolve defect → chase sign-off"],
   ["A-02-03A","Karen","—","decision","Owner has NOT collected key — sole blocker. Vincent's decision pending: extend to Dec (Option A) or void by 31 Aug (Option B).","⚠ Await Vincent's decision → update SDP"],
   ["A-13-06","Sam Leong","—","defect","Defects ongoing. Design plan unsigned.","Resolve defect → chase approval"],
