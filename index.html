@@ -110,8 +110,8 @@
   <div class="kpi y"><div class="n">229</div><div class="l">Total units</div></div>
   <div class="kpi g"><div class="n">142</div><div class="l">Complete</div><div class="d up">▲ +5 vs 9 Jun</div></div>
   <div class="kpi r"><div class="n">87</div><div class="l">Outstanding</div><div class="d up">▼ −5 vs 9 Jun</div></div>
-  <div class="kpi r"><div class="n">65</div><div class="l">In active batch</div><div class="d up">▼ −3 vs 15 Jun</div></div>
-  <div class="kpi r"><div class="n">22</div><div class="l">Pending confirmation</div><div class="d up">▼ −2 vs 9 Jun</div></div>
+  <div class="kpi r"><div class="n">72</div><div class="l">In active batch</div><div class="d up">▲ +4 vs 15 Jun</div></div>
+  <div class="kpi r"><div class="n">15</div><div class="l">Pending confirmation</div><div class="d up">▼ −7 vs 15 Jun</div></div>
 </div>
 
 <div class="delta">
@@ -120,8 +120,8 @@
     <tr><th>Metric</th><th>9 Jun</th><th>15 Jun</th><th>23 Jun</th><th>Change (15→23)</th></tr>
     <tr><td>Complete (file in col O)</td><td class="num">137</td><td class="num">139</td><td class="num">142</td><td class="up">+3</td></tr>
     <tr><td>Outstanding</td><td class="num">92</td><td class="num">90</td><td class="num">87</td><td class="up">−3</td></tr>
-    <tr><td>— in active batch</td><td class="num">68</td><td class="num">68</td><td class="num">65</td><td class="up">−3</td></tr>
-    <tr><td>— pending confirmation</td><td class="num">24</td><td class="num">22</td><td class="num">22</td><td class="flat">flat</td></tr>
+    <tr><td>— in active batch</td><td class="num">68</td><td class="num">68</td><td class="num">72</td><td class="up">+4</td></tr>
+    <tr><td>— pending confirmation</td><td class="num">24</td><td class="num">22</td><td class="num">15</td><td class="up">−7</td></tr>
   </table></div>
   <p style="font-size:12px;margin-top:8px;color:#555">Three units signed HO since 15 Jun: A-20-06 (18 Jun), B-23A-07 (12 Jun — col O updated), B-26-3A (12 Jun).</p>
   <div class="moved">
@@ -130,6 +130,7 @@
     <span class="chip"><b>B-26-3A</b> → complete (HO 12/6)</span>
     <span class="chip"><b>A-10-3A</b> → handover 24 Jun (tomorrow)</span>
     <span class="chip"><b>7 PD units</b> → handover 26 Jun</span>
+    <span class="chip"><b>7 units</b> → entered Batch 17/18 (moved from pending confirmation)</span>
   </div>
 </div>
 
@@ -316,8 +317,8 @@
 
 <!-- PM LOAD -->
 <div class="box">
-  <h3>Workload by person — Pending (22) + In Reno (65)</h3>
-  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno units only (all 22 pending are under Lex).</p>
+  <h3>Workload by person — Pending (15) + In Reno (72)</h3>
+  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno units only (all 15 pending are under Lex).</p>
   <div class="load-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:4px;">
     <div>
       <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:13px;margin-bottom:6px;">Consultant</div>
@@ -334,7 +335,7 @@
   </div>
 </div>
 
-<h2>1 · Pending Confirmation (22) <span style="font-size:13px;color:#666">— not yet in a batch</span></h2>
+<h2>1 · Pending Confirmation (15) <span style="font-size:13px;color:#666">— not yet in a batch</span></h2>
 <p class="lead">Blocker category and target action reflect position as of 23 Jun. Verify exact status against the live sheet.</p>
 <div class="tbl-wrap"><table id="t-conf"></table></div>
 
@@ -354,12 +355,9 @@ const conf = [
   ["A-25-07","Yit Soon","Zaf","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
   ["A-22-07","Yit Soon","Zaf","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
   ["A-20-07","Yit Soon","Zaf","design","Pending VP from developer + design plan (designer needed).","Pending developer VP; assign designer → sign-off"],
-  ["A-11-05","Yit Soon","Nadia","key","Design plan signed. Defects done. Waiting for developer to release key (Yit Soon chasing — expects this week).","Key release → proceed immediately (all docs ready)"],
   ["A-23A-08","Elene","—","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
   ["A-23A-09","Elene","—","design","CE paid. Pending defect + design plan sign-off.","Resolve defect → owner sign-off"],
   ["A-27-02","Kavita","—","permit","Design plan signed. Defects done. Permit submitted — waiting approval.","Permit approval → schedule (this week)"],
-  ["A-27-09","Kavita","—","defect","Defects ongoing. Design plan unsigned. Permit pending.","Defect completion → owner sign-off → permit"],
-  ["A-26-02","Karen","—","batch","Confirmed Batch 17. Kicked off 15 Jun. Lex capacity OK.","In Batch 17 ✓"],
   ["B-26-03","Jonathan","—","permit","Start claimed for w/c 15 Jun — NOT YET CONFIRMED. All docs ready; maincon must agree defect + reno plan concurrently.","⚠ Verify with Jonathan: has this started? Confirm batch assignment."],
   ["A-02-02","Karen","—","defect","Defects ongoing. Design plan unsigned.","Resolve defect → chase sign-off"],
   ["A-02-03A","Karen","—","decision","Owner has NOT collected key — sole blocker. Vincent's decision pending: extend to Dec (Option A) or void by 31 Aug (Option B).","⚠ Await Vincent's decision → update SDP"],
@@ -368,11 +366,7 @@ const conf = [
   ["A-21-06","Sam Leong","Zaf","defect","Defects ongoing. Owner refuses to sign design plan until defects done. Key not collected. Sam Leong pushing sign-off this week.","Sam Leong: commit defect-done date + design plan sign-off (no date yet)"],
   ["B-22-05","Lina","Nadia","design","Design plan signature + reno permit pending. SC: Lina. Target: settle both this week.","Sign-off + permit this week → enter scheduling"],
   ["B-27-07","Samuel Kwan","—","defect","Design plan signed. Defect pending. Key not collected. Samuel Kwan following up Thu/Fri.","Samuel Kwan: commit defect-done date (no date yet)"],
-  ["A-18-03","Lina","—","permit","VO signed. Permit pending approval.","Permit approval → schedule (this week)"],
-  ["A-19-02","Lina","Adibah","wip","Pending client confirmation. No WIP updates from Lina.","Chase client confirmation"],
   ["B-12-07","Luqman","Zaf","wip","Pending client confirmation. No WIP updates from Luqman for weeks.","Chase Luqman for update + client confirmation"],
-  ["A-07-01","Kavita","Nadia","permit","Design plan signed. Key collected. Reno permit pending — payment to MO (deposit) outstanding. Kavita chasing owner + MO (target this week).","Payment cleared → permit → enter batch"],
-  ["A-27-05","Luqman","—","wip","Design plan signed. Pending confirmation. No recent WIP from Luqman.","Chase Luqman → confirm + permit → schedule"],
 ];
 
 const catLabel = {
@@ -449,9 +443,16 @@ const reno = [
  ["B-26-08","Yit Soon","Zaf","Lex","1/8/26 †","—","Pending defect/permit/sign","reno",true,false,16],
  ["A-23-06","Yit Soon","Adibah","Lex","10/8/26 †","—","Built-in — pending permit &amp; sign","reno",true,false,16],
  ["B-27-05","Samuel Kwan","Nadia","Lex","1/8/26 †","—","Built-in","reno",true,false,16],
- ["A-21-08","Luqman","—","Lex","—","—","Started 10 Jun","new",false,true,17],
- ["B-17-06","Anzzo","Zaf","Lex","—","—","Pending start","new",false,true,17],
- ["B-17-07","Anzzo","Atdee","Lex","—","—","Started 15 Jun","new",false,true,17],
+ ["A-21-08","Luqman","—","Lex","—","—","Started 10 Jun","reno",false,false,17],
+ ["B-17-06","Anzzo","Zaf","Lex","—","—","In reno — built-in","reno",false,false,17],
+ ["B-17-07","Anzzo","Atdee","Lex","—","—","In reno — built-in","reno",false,false,17],
+ ["A-07-01","Kavita","Nadia","Lex","—","—","In reno — built-in (Batch 17)","reno",false,false,17],
+ ["A-11-05","Yit Soon","Nadia","Lex","—","—","In reno — built-in (Batch 17)","reno",false,false,17],
+ ["A-18-03","Lina","—","Lex","3/7/26","—","Batch 18 — just started (22 Jun)","new",false,true,18],
+ ["A-26-02","Karen","—","Lex","3/7/26","—","Batch 18 — just started (22 Jun)","new",false,true,18],
+ ["A-27-05","Luqman","—","Lex","3/7/26","—","Batch 18 — just started (22 Jun)","new",false,true,18],
+ ["A-27-09","Kavita","—","Lex","3/7/26","—","Batch 18 — just started (22 Jun)","new",false,true,18],
+ ["A-19-02","Lina","Adibah","Lex","—","—","Batch 18 — built-in, just started (22 Jun)","new",false,true,18],
 ];
 
 function tagHtml(t){
