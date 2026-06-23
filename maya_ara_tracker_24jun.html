@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maya Ara — Outstanding Units Tracker (24 Jun)</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --y:#F5C800; --k:#111; --line:#e4e4e4; --bg:#fafafa;
+    --red:#c0392b; --amb:#b8860b; --grn:#1e7d34; --blu:#1f5fa8;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Barlow',system-ui,sans-serif;color:var(--k);background:var(--bg);font-size:14px;line-height:1.45;}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 18px 60px;}
+  h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.5px;margin:0;}
+  h1{font-weight:900;font-size:38px;line-height:1;word-break:break-word;}
+  .sub{font-family:'Barlow Condensed';font-weight:500;color:#555;font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+  header{border-bottom:6px solid var(--y);padding-bottom:14px;margin-bottom:22px;}
+  .caveat{background:#fff8e1;border:1px solid var(--y);border-left:6px solid var(--y);padding:12px 14px;font-size:13px;margin:16px 0;border-radius:3px;}
+  .caveat b{font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.5px;}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:18px 0;}
+  .kpi{background:#fff;border:1px solid var(--line);border-top:4px solid var(--k);padding:12px 14px;border-radius:3px;}
+  .kpi .n{font-family:'Barlow Condensed';font-weight:900;font-size:34px;line-height:1;}
+  .kpi.y{border-top-color:var(--y);} .kpi.r{border-top-color:var(--red);} .kpi.g{border-top-color:var(--grn);}
+  .kpi .l{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#666;margin-top:4px;}
+  .kpi .d{font-size:12px;font-weight:700;margin-top:3px;font-family:'Barlow Condensed';}
+  .up{color:var(--grn);} .flat{color:#999;}
+  h2{font-size:24px;margin:34px 0 4px;border-bottom:3px solid var(--k);padding-bottom:4px;}
+  .lead{font-size:13px;color:#555;margin:0 0 12px;}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:12.5px;}
+  th{background:var(--k);color:#fff;font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.4px;font-size:12px;padding:7px 8px;text-align:left;position:sticky;top:0;}
+  td{padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+  tr:nth-child(even) td{background:#fcfcfc;}
+  .u{font-family:'Barlow Condensed';font-weight:700;white-space:nowrap;}
+  .pm{font-weight:600;}
+  .tag{display:inline-block;font-size:10px;font-weight:700;font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.5px;padding:1px 6px;border-radius:2px;color:#fff;}
+  .t-block{background:var(--red);} .t-reno{background:var(--blu);} .t-pd{background:var(--amb);}
+  .t-conf{background:#6b3fa0;} .t-new{background:var(--grn);} .t-dec{background:var(--red);}
+  .why{color:#333;}
+  .amb{color:var(--amb);font-weight:600;}
+  .box{background:#fff;border:1px solid var(--line);border-radius:3px;padding:16px 18px;margin:14px 0;}
+  .box h3{font-size:19px;margin-bottom:8px;}
+  .delta{background:#fff;border:1px solid var(--line);border-left:6px solid var(--grn);border-radius:3px;padding:14px 18px;margin:14px 0;}
+  .delta h3{font-size:20px;margin-bottom:8px;}
+  .moved{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+  .chip{font-size:12px;background:#eef7f0;border:1px solid #cfe6d5;border-radius:3px;padding:4px 9px;}
+  .chip b{font-family:'Barlow Condensed';}
+  ul{margin:6px 0 0;padding-left:20px;} li{margin:4px 0;}
+  .foot{font-size:11px;color:#888;margin-top:30px;border-top:1px solid var(--line);padding-top:12px;}
+  .pmbar{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;}
+  .pmbox{flex:1;min-width:120px;background:#fff;border:1px solid var(--line);padding:8px 10px;border-radius:3px;}
+  .pmbox .nm{font-family:'Barlow Condensed';font-weight:700;font-size:15px;}
+  .pmbox .ct{font-size:11px;color:#666;}
+  table.cmp td, table.cmp th{text-align:left;}
+  table.cmp td.num{font-family:'Barlow Condensed';font-weight:700;font-size:15px;}
+  .jc-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:12.5px;margin-top:8px;}
+  .jc-table th{background:#1f3a5f;color:#fff;font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.4px;font-size:12px;padding:7px 8px;text-align:left;}
+  .jc-table td{padding:7px 8px;border-bottom:1px solid #eee;vertical-align:top;}
+  .jc-table tr:nth-child(even) td{background:#fcfcfc;}
+  .ok{color:var(--grn);font-weight:700;font-family:'Barlow Condensed';font-size:13px;}
+  .warn{color:var(--amb);font-weight:700;font-family:'Barlow Condensed';font-size:13px;}
+  .alert-red{color:var(--red);font-weight:700;font-family:'Barlow Condensed';font-size:13px;}
+  .uchips{display:flex;flex-wrap:wrap;gap:4px;margin:2px 0;}
+  .uc{font-size:11px;font-family:'Barlow Condensed';font-weight:700;background:#eef;border:1px solid #ccd;border-radius:2px;padding:2px 6px;white-space:nowrap;}
+  .verdict-box{background:#fdf9ff;border:1px solid #d8c0f0;border-left:6px solid #6b3fa0;border-radius:3px;padding:14px 18px;margin:14px 0;}
+  .verdict-box h3{font-size:20px;margin-bottom:8px;color:#6b3fa0;}
+  .proj-box{background:#f4fff5;border:1px solid #b8dfc0;border-left:6px solid var(--grn);border-radius:3px;padding:14px 18px;margin:14px 0;}
+  .proj-box h3{font-size:20px;margin-bottom:8px;color:var(--grn);}
+  .overdue{color:var(--red);font-weight:700;font-family:'Barlow Condensed';}
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;}
+  .cat{font-size:11px;font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#555;}
+  .cat-permit{color:#1f5fa8;} .cat-design{color:#6b3fa0;} .cat-defect{color:#c0610b;}
+  .cat-key{color:#1e7d34;} .cat-wip{color:var(--red);} .cat-batch{color:var(--grn);}
+  .cat-dec{color:var(--red);}
+  @media(max-width:640px){
+    .wrap{padding:14px 12px 48px;}
+    h1{font-size:24px;}
+    .sub{font-size:12px;}
+    h2{font-size:18px;}
+    .kpis{grid-template-columns:repeat(2,1fr);gap:7px;}
+    .kpi .n{font-size:26px;}
+    .kpi .l{font-size:10px;}
+    .box,.delta,.verdict-box,.proj-box{padding:12px 12px;}
+    .pmbar{flex-direction:column;}
+    .pmbox{min-width:unset;}
+    table,.jc-table{font-size:11.5px;}
+    th,td,.jc-table th,.jc-table td{padding:5px 6px;}
+    .load-grid{grid-template-columns:1fr !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Maya Ara — Outstanding Units Tracker</h1>
+  <div class="sub">TMG · Reno + Handover · as of <span style="font-family:'Barlow Condensed';font-weight:900;font-size:22px;color:#fff;background:var(--k);padding:1px 8px;border-radius:2px;letter-spacing:.5px;">24 Jun 2026</span> · 229 units · exit target 31 Aug 2026</div>
+</header>
+
+<div class="caveat">
+  <b>Completion rule:</b> a unit counts complete when column O (Signed Handover Doc Link) holds a file link. Sheet snapshot: 24 Jun 2026 (142 complete / 87 outstanding). Three new completions since 15 Jun: A-20-06 (HO signed 18/6), B-23A-07 (12/6), B-26-3A (12/6).
+</div>
+
+<div class="kpis">
+  <div class="kpi y"><div class="n">229</div><div class="l">Total units</div></div>
+  <div class="kpi g"><div class="n">142</div><div class="l">Complete</div><div class="d up">▲ +5 vs 9 Jun</div></div>
+  <div class="kpi r"><div class="n">87</div><div class="l">Outstanding</div><div class="d up">▼ −5 vs 9 Jun</div></div>
+  <div class="kpi r"><div class="n">65</div><div class="l">In active batch</div><div class="d up">▼ −3 vs 15 Jun</div></div>
+  <div class="kpi r"><div class="n">22</div><div class="l">Pending confirmation</div><div class="d up">▼ −2 vs 9 Jun</div></div>
+</div>
+
+<div class="delta">
+  <h3>Week-over-week movement</h3>
+  <div class="tbl-wrap"><table class="cmp">
+    <tr><th>Metric</th><th>9 Jun</th><th>15 Jun</th><th>23 Jun</th><th>Change (15→23)</th></tr>
+    <tr><td>Complete (file in col O)</td><td class="num">137</td><td class="num">139</td><td class="num">142</td><td class="up">+3</td></tr>
+    <tr><td>Outstanding</td><td class="num">92</td><td class="num">90</td><td class="num">87</td><td class="up">−3</td></tr>
+    <tr><td>— in active batch</td><td class="num">68</td><td class="num">68</td><td class="num">65</td><td class="up">−3</td></tr>
+    <tr><td>— pending confirmation</td><td class="num">24</td><td class="num">22</td><td class="num">22</td><td class="flat">flat</td></tr>
+  </table></div>
+  <p style="font-size:12px;margin-top:8px;color:#555">Three units signed HO since 15 Jun: A-20-06 (18 Jun), B-23A-07 (12 Jun — col O updated), B-26-3A (12 Jun).</p>
+  <div class="moved">
+    <span class="chip"><b>A-20-06</b> → complete (HO 18/6)</span>
+    <span class="chip"><b>B-23A-07</b> → complete (HO 12/6)</span>
+    <span class="chip"><b>B-26-3A</b> → complete (HO 12/6)</span>
+    <span class="chip"><b>A-10-3A</b> → handover 24 Jun (tomorrow)</span>
+    <span class="chip"><b>7 PD units</b> → handover 26 Jun</span>
+  </div>
+</div>
+
+<!-- VELOCITY & FORECAST -->
+<div class="proj-box">
+  <h3>Velocity &amp; Forecast — can we hit 31 Aug?</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:10px;">
+    <div>
+      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:12px;color:#555;margin-bottom:6px;">Jonathan's projection</div>
+      <div class="tbl-wrap"><table class="cmp" style="font-size:12px;">
+        <tr><th>Period</th><th style="text-align:center">In Reno</th><th style="text-align:center">Yet to start</th><th style="text-align:center">Total open</th></tr>
+        <tr><td>Mid Jun</td><td class="num" style="text-align:center">68</td><td class="num" style="text-align:center">22</td><td class="num" style="text-align:center">90</td></tr>
+        <tr><td>End Jul</td><td class="num" style="text-align:center">40</td><td class="num" style="text-align:center">10</td><td class="num" style="text-align:center">50</td></tr>
+        <tr><td>End Aug</td><td class="num" style="text-align:center">12</td><td class="num" style="text-align:center">4</td><td class="num" style="text-align:center" style="color:var(--red)"><b>16</b></td></tr>
+        <tr><td>End Sep</td><td class="num" style="text-align:center">3</td><td class="num" style="text-align:center">1</td><td class="num" style="text-align:center">4</td></tr>
+      </table></div>
+    </div>
+    <div>
+      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:12px;color:#555;margin-bottom:6px;">Run-rate check</div>
+      <ul style="font-size:13px;margin:0;padding-left:18px;">
+        <li><b>Need:</b> ~9 completions/week to hit 31 Aug (87 units ÷ ~10 weeks)</li>
+        <li><b>Actual this week (17–23 Jun):</b> 3 completions (A-20-06, B-23A-07, B-26-3A)</li>
+        <li><b>Upcoming handovers:</b> A-10-3A (24 Jun) + 7 units (26 Jun) — if all proceed, ~9 completions by end of week</li>
+        <li><b>31 Aug target:</b> not achievable on Jonathan's trajectory — 16 units open at end Aug. Real exit: late Sep 2026</li>
+        <li><b>1 Jul demob:</b> ~50 units still open — manage as handover, not completion</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:12px;color:#555;margin:4px 0 0">Completions will cluster as Batches 13–16 finish reno late Jun–Jul.</p>
+</div>
+
+<!-- PM LOAD -->
+<div class="box">
+  <h3>Workload by person — Pending (22) + In Reno (65)</h3>
+  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno units only (all 22 pending are under Lex).</p>
+  <div class="load-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:4px;">
+    <div>
+      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:13px;margin-bottom:6px;">Consultant</div>
+      <div class="tbl-wrap"><table id="load-consultant" class="jc-table"></table></div>
+    </div>
+    <div>
+      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:13px;margin-bottom:6px;">Designer</div>
+      <div class="tbl-wrap"><table id="load-designer" class="jc-table"></table></div>
+    </div>
+    <div>
+      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:13px;margin-bottom:6px;">PM</div>
+      <div class="tbl-wrap"><table id="load-pm" class="jc-table"></table></div>
+    </div>
+  </div>
+</div>
+
+<h2>1 · Pending Confirmation (22) <span style="font-size:13px;color:#666">— not yet in a batch</span></h2>
+<p class="lead">Blocker category and target action reflect position as of 24 Jun. Verify exact status against the live sheet.</p>
+<div class="tbl-wrap"><table id="t-conf"></table></div>
+
+<h2>2 · In Renovation / Finishing (65) <span style="font-size:13px;color:#666">— scheduled, running the cycle</span></h2>
+<p class="lead">PM = Lex unless shown. <span class="tag t-new">NEW</span> = entered batch this week. &nbsp; <span style="color:var(--red);font-weight:700">Red ⚠</span> = target date passed &nbsp;|&nbsp; <span style="color:var(--amb);font-weight:700">Amber</span> = date uncertain &nbsp;|&nbsp; Snapshot: 23 Jun</p>
+<div class="tbl-wrap"><table id="t-reno"></table></div>
+
+<div class="foot">
+  Tags: <span class="tag t-conf">CONFIRM</span> pending confirmation · <span class="tag t-pd">PD</span> pending defect/handover · <span class="tag t-reno">RENO</span> in cycle · <span class="tag t-block">RISK</span> late/uncertain · <span class="tag t-new">NEW</span> newly scheduled &nbsp;|&nbsp; Verify all data against the live sheet.
+</div>
+</div>
+
+<script>
+// [unit, consultant, designer, category, status, targetAction]
+// category values: design | permit | defect | key | wip | batch | decision
+const conf = [
+  ["A-25-07","Yit Soon","Zaf","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
+  ["A-22-07","Yit Soon","Zaf","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
+  ["A-20-07","Yit Soon","Zaf","design","Pending VP from developer + design plan (designer needed).","Pending developer VP; assign designer → sign-off"],
+  ["A-11-05","Yit Soon","Nadia","key","Design plan signed. Defects done. Waiting for developer to release key (Yit Soon chasing — expects this week).","Key release → proceed immediately (all docs ready)"],
+  ["A-23A-08","Elene","—","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
+  ["A-23A-09","Elene","—","design","CE paid. Pending defect + design plan sign-off.","Resolve defect → owner sign-off"],
+  ["A-27-02","Kavita","—","permit","Design plan signed. Defects done. Permit submitted — waiting approval.","Permit approval → schedule (this week)"],
+  ["A-27-09","Kavita","—","defect","Defects ongoing. Design plan unsigned. Permit pending.","Defect completion → owner sign-off → permit"],
+  ["A-26-02","Karen","—","batch","Confirmed Batch 17. Kicked off 15 Jun. Lex capacity OK.","In Batch 17 ✓"],
+  ["B-26-03","Jonathan","—","permit","Start claimed for w/c 15 Jun — NOT YET CONFIRMED. All docs ready; maincon must agree defect + reno plan concurrently.","⚠ Verify with Jonathan: has this started? Confirm batch assignment."],
+  ["A-02-02","Karen","—","defect","Defects ongoing. Design plan unsigned.","Resolve defect → chase sign-off"],
+  ["A-02-03A","Karen","—","decision","Owner has NOT collected key — sole blocker. Vincent's decision pending: extend to Dec (Option A) or void by 31 Aug (Option B).","⚠ Await Vincent's decision → update SDP"],
+  ["A-13-06","Sam Leong","—","defect","Defects ongoing. Design plan unsigned.","Resolve defect → chase approval"],
+  ["A-12-06","Sam Leong","—","defect","Defects ongoing. Design plan unsigned.","Resolve defect → chase approval"],
+  ["A-21-06","Sam Leong","Zaf","defect","Defects ongoing. Owner refuses to sign design plan until defects done. Key not collected. Sam Leong pushing sign-off this week.","Sam Leong: commit defect-done date + design plan sign-off (no date yet)"],
+  ["B-22-05","Lina","Nadia","design","Design plan signature + reno permit pending. SC: Lina. Target: settle both this week.","Sign-off + permit this week → enter scheduling"],
+  ["B-27-07","Samuel Kwan","—","defect","Design plan signed. Defect pending. Key not collected. Samuel Kwan following up Thu/Fri.","Samuel Kwan: commit defect-done date (no date yet)"],
+  ["A-18-03","Lina","—","permit","VO signed. Permit pending approval.","Permit approval → schedule (this week)"],
+  ["A-19-02","Lina","Adibah","wip","Pending client confirmation. No WIP updates from Lina.","Chase client confirmation"],
+  ["B-12-07","Luqman","Zaf","wip","Pending client confirmation. No WIP updates from Luqman for weeks.","Chase Luqman for update + client confirmation"],
+  ["A-07-01","Kavita","Nadia","permit","Design plan signed. Key collected. Reno permit pending — payment to MO (deposit) outstanding. Kavita chasing owner + MO (target this week).","Payment cleared → permit → enter batch"],
+  ["A-27-05","Luqman","—","wip","Design plan signed. Pending confirmation. No recent WIP from Luqman.","Chase Luqman → confirm + permit → schedule"],
+];
+
+const catLabel = {
+  design: {cls:"cat-design", text:"Design plan"},
+  permit: {cls:"cat-permit", text:"Permit pending"},
+  defect: {cls:"cat-defect", text:"Defect in progress"},
+  key:    {cls:"cat-key",    text:"Key pending"},
+  wip:    {cls:"cat-wip",    text:"No WIP updates"},
+  batch:  {cls:"cat-batch",  text:"In batch ✓"},
+  decision:{cls:"cat-dec",   text:"Decision pending"},
+};
+
+const reno = [
+ // [unit, consultant, designer, pm, targetDate, altDate, statusNote, tag, isDoubtful, isNew, batch]
+ ["A-10-3A","Kavita","Marsha","Lex","27/3/26","11/4/26 †","PD — handover scheduled 24 Jun (tomorrow)","pd",true,false,8],
+ ["B-13-08","Anzzo","—","Lex","10/4/26","—","PD — permit + design plan done","pd",false,false,9],
+ ["A-18-06","Sam Leong","—","Lex","18/4/26","11/4/26 †","PD — handover scheduled 26 Jun","pd",true,false,9],
+ ["B-19-06","Michelle","—","Lex","—","31/3/26","PD — handover scheduled 26 Jun","pd",false,false,9],
+ ["A-25-05","Kavita","—","Lex","23/4/26","—","PD — handover scheduled 26 Jun","pd",false,false,9],
+ ["A-16-3A","Anzzo","Zaf","Lex","25/4/26","—","PD — handover scheduled 26 Jun","pd",false,false,9],
+ ["A-18-08","Sam Leong","Nadia","Lex","18/4/26","—","PD — handover scheduled 6 Jul","pd",false,false,9],
+ ["A-13A-05","Anzzo","Marsha","Lex","2/5/26","—","PD — handover scheduled 26 Jun","pd",false,false,10],
+ ["A-10-07","Kavita","Nadia","Lex","30/4/26","—","PD — handover scheduled 26 Jun","pd",false,false,10],
+ ["A-03-01","Elene","Marsha","Lex","17/5/26","—","In reno — built-in","reno",false,false,10],
+ ["B-19-05","XiaoXue","—","Lex","6/5/26","—","In reno — built-in","reno",false,false,10],
+ ["B-25-07","Samuel Kwan","Qat","Lex","13/5/26","—","In reno — built-in","reno",false,false,10],
+ ["B-11-03","Kavita","—","Syaharil","6/6/26","—","PD — handover scheduled 29 Jun","pd",false,false,11],
+ ["A-06-01","Kavita","—","Syaharil","6/6/26","—","PD — handover scheduled 30 Jun","pd",false,false,11],
+ ["A-23A-01","Luqman","—","Syaharil","30/4/26","—","PD","pd",false,false,11],
+ ["A-3A-05","Kavita","—","Syaharil","12/6/26","—","PD — handover scheduled 29 Jun","pd",false,false,11],
+ ["A-08-01","Elene","Marsha","Syaharil","30/5/26","—","In reno — built-in","reno",false,false,11],
+ ["A-06-06","Sam Leong","—","Syaharil","14/5/26","15/5/26","PD — handover scheduled 26 Jun","pd",false,false,11],
+ ["B-12-03","Kavita","Nadia","Syaharil","30/5/26","—","In reno — built-in","reno",false,false,11],
+ ["A-16-01","Sam Leong","Atdee","Syaharil","21/5/26","—","Ready to take picture 100% — not handed over","reno",false,false,11],
+ ["A-12-07","Anzzo","Zaf","Syaharil","4/6/26","—","In reno — built-in","reno",false,false,11],
+ ["B-20-05","Sam Leong","Marsha","Syaharil","6/6/26","—","In reno — built-in","reno",false,false,11],
+ ["A-21-02","Kavita","Nadia","Syaharil","10/6/26","—","PD — built-in","pd",false,false,11],
+ ["B-11-06","Kavita","Marsha","Syaharil","8/6/26","—","In reno — built-in","reno",false,false,11],
+ ["A-07-03","Jonathan","Marsha","Syaharil","30/6/26","—","Built-in — just started","reno",false,false,11],
+ ["A-17-3A","Sam Leong","—","Lex","6/6/26","—","PD","pd",false,false,12],
+ ["B-23-05","Karen","—","Lex","6/6/26","—","In reno","reno",false,false,12],
+ ["B-15-05","XiaoXue","Nadia","Lex","17/6/26","—","In reno — built-in","reno",false,false,12],
+ ["A-16-07","Sam Leong","Nadia","Lex","7/6/26","—","In reno","reno",false,false,12],
+ ["A-17-06","Sam Leong","Nadia","Lex","7/6/26","—","In reno","reno",false,false,12],
+ ["A-22-08","XiaoXue","Qat","Lex","8/6/26","—","In reno","reno",false,false,12],
+ ["A-13A-3A","Anzzo","—","Lex","13/6/26","—","In reno","reno",false,false,13],
+ ["B-20-06","Anzzo","—","Lex","20/6/26","—","In reno","reno",false,false,13],
+ ["A-13A-02","Kavita","Nadia","Lex","8/6/26","—","In reno — built-in","reno",false,false,13],
+ ["A-21-03","Anzzo","Zaf","Lex","14/6/26","—","In reno — built-in","reno",false,false,13],
+ ["B-13-06","Anzzo","Atdee","Lex","20/6/26","—","In reno — built-in","reno",false,false,13],
+ ["B-16-3A","Anzzo","Zaf","Lex","22/6/26","—","In reno — built-in","reno",false,false,14],
+ ["B-18-06","Lina","Zaf","Lex","19/6/26","—","In reno — built-in","reno",false,false,14],
+ ["B-21-05","Yit Soon","Nadia","Lex","27/6/26","—","In reno — built-in","reno",false,false,14],
+ ["B-21-06","Luqman","Marsha","Lex","24/6/26","—","In reno — built-in","reno",false,false,14],
+ ["A-15-06","Anzzo","—","Lex","27/6/26","—","PD","pd",false,false,14],
+ ["A-20-01","Lina","—","Lex","29/6/26","—","In reno","reno",false,false,14],
+ ["A-20-3A","Lina","—","Lex","29/6/26","—","In reno (key FALSE)","reno",false,false,14],
+ ["B-23-07","Karen","—","Lex","4/7/26","—","PD","pd",false,false,14],
+ ["B-27-03","Luqman","—","Lex","4/7/26","—","PD","pd",false,false,14],
+ ["A-03-06","Elene","Nadia","Lex","27/6/26","—","PD — built-in","pd",false,false,14],
+ ["B-11-07","Samuel Kwan","Zaf","Lex","27/6/26","—","In reno — built-in","reno",false,false,14],
+ ["A-15-01","Sam Leong","Marsha","Lex","27/6/26","—","In reno — built-in","reno",false,false,14],
+ ["A-15-05","Anzzo","Zaf","Lex","27/6/26","—","In reno — built-in","reno",false,false,14],
+ ["A-18-07","Sam Leong","Marsha","Lex","22/6/26","—","In reno — built-in","reno",false,false,14],
+ ["A-3A-3A","Kavita","—","Lex","21/7/26","—","Just started","reno",false,false,15],
+ ["A-11-02","Yit Soon","—","Lex","11/7/26","29/6/26","Pending permit &amp; key","reno",false,false,15],
+ ["B-18-07","XiaoXue","—","Lex","11/7/26","—","Just started","reno",false,false,15],
+ ["A-09-02","Jonathan","Zaf","Lex","21/7/26","—","Built-in — just started","reno",false,false,15],
+ ["A-10-06","Kavita","Nadia","Lex","11/7/26","—","Built-in — just started","reno",false,false,15],
+ ["A-13A-07","Yit Soon","Zaf","Lex","21/7/26","16/7/26","Built-in — pending defects","reno",false,false,15],
+ ["A-17-07","XiaoXue","Nadia","Lex","21/7/26","—","Built-in","reno",false,false,15],
+ ["A-17-08","Anzzo","Zaf","Lex","19/7/26","—","Built-in","reno",false,false,15],
+ ["A-07-02","Yit Soon","—","Lex","26/7/26","—","Pending defects","reno",false,false,16],
+ ["B-26-08","Yit Soon","Zaf","Lex","1/8/26 †","—","Pending defect/permit/sign","reno",true,false,16],
+ ["A-23-06","Yit Soon","Adibah","Lex","10/8/26 †","—","Built-in — pending permit &amp; sign","reno",true,false,16],
+ ["B-27-05","Samuel Kwan","Nadia","Lex","1/8/26 †","—","Built-in","reno",true,false,16],
+ ["A-21-08","Luqman","—","Lex","—","—","Started 10 Jun","new",false,true,17],
+ ["B-17-06","Anzzo","Zaf","Lex","—","—","Pending start","new",false,true,17],
+ ["B-17-07","Anzzo","Atdee","Lex","—","—","Started 15 Jun","new",false,true,17],
+];
+
+function tagHtml(t){
+  const m={conf:["t-conf","PENDING"],pd:["t-pd","PD"],reno:["t-reno","RENO"],block:["t-block","RISK"],new:["t-new","NEW"]};
+  const x=m[t]||m.reno; return `<span class="tag ${x[0]}">${x[1]}</span>`;
+}
+
+document.getElementById('t-conf').innerHTML=
+  "<tr><th>Unit</th><th>Consultant</th><th>Designer</th><th>Category</th><th>Current status</th><th>Target action</th></tr>"+
+  conf.map(r=>{
+    const cat = catLabel[r[3]] || {cls:'', text: r[3]};
+    const isDecision = r[3]==='decision';
+    return `<tr${isDecision?' class="decision-row"':''}>
+      <td class="u">${r[0]}<br>${tagHtml('conf')}</td>
+      <td>${r[1]}</td>
+      <td>${r[2]}</td>
+      <td><span class="cat ${cat.cls}">${cat.text}</span></td>
+      <td class="why">${r[4]}</td>
+      <td>${r[5]}</td>
+    </tr>`;
+  }).join('');
+
+function parseDate(s){
+  if(!s||s==='—') return null;
+  const clean = s.replace(/[^0-9/]/g,'');
+  const parts = clean.split('/');
+  if(parts.length!==3) return null;
+  const [d,m,y] = parts.map(Number);
+  return new Date(2000+y, m-1, d);
+}
+const today = new Date(2026,5,24);
+
+function dateCls(dateStr, isDoubtful){
+  const d = parseDate(dateStr);
+  if(d && d < today) return 'overdue';
+  if(isDoubtful)     return 'amb';
+  return '';
+}
+
+document.getElementById('t-reno').innerHTML=
+  "<tr><th>Unit</th><th>Batch</th><th>Consultant</th><th>Designer</th><th>PM</th><th>Target completion</th><th>Status</th></tr>"+
+  reno.map(r=>{
+    const cls = dateCls(r[4], r[8]);
+    const label = cls==='overdue' ? r[4]+' ⚠' : r[4];
+    const batch = r[10] ? `<span style="font-family:'Barlow Condensed';font-weight:700;font-size:13px">${r[10]}</span>` : '—';
+    return `<tr><td class="u">${r[0]} ${tagHtml(r[9]?'new':r[7])}</td><td style="text-align:center">${batch}</td><td>${r[1]}</td><td>${r[2]}</td><td class="pm">${r[3]}</td><td class="${cls}">${label}</td><td class="why">${r[6]}</td></tr>`;
+  }).join('');
+
+function countBy(arr, idx){
+  const c={};
+  arr.forEach(r=>{const k=r[idx]; if(k&&k!=='—') c[k]=(c[k]||0)+1;});
+  return c;
+}
+
+function renderLoadTable(id, confCounts, renoCounts){
+  const allKeys = new Set([...Object.keys(confCounts), ...Object.keys(renoCounts)]);
+  const rows = [...allKeys].map(k=>({
+    name:k,
+    conf:confCounts[k]||0,
+    reno:renoCounts[k]||0,
+    total:(confCounts[k]||0)+(renoCounts[k]||0)
+  })).sort((a,b)=>b.total-a.total);
+
+  const hasConf = Object.keys(confCounts).length>0;
+  const hasReno = Object.keys(renoCounts).length>0;
+
+  let h=`<tr><th>Name</th>${hasConf?'<th style="text-align:center">Pending</th>':''}${hasReno?'<th style="text-align:center">In Reno</th>':''}<th style="text-align:center">Total</th></tr>`;
+  rows.forEach(r=>{
+    const confCell = r.conf ? `<td style="text-align:center;font-family:'Barlow Condensed';font-weight:700;color:var(--red)">${r.conf}</td>`
+                            : `<td style="text-align:center;color:#bbb">—</td>`;
+    const renoCell = r.reno ? `<td style="text-align:center;font-family:'Barlow Condensed';font-weight:700;color:var(--blu)">${r.reno}</td>`
+                            : `<td style="text-align:center;color:#bbb">—</td>`;
+    h+=`<tr>
+      <td style="font-weight:600">${r.name}</td>
+      ${hasConf?confCell:''}
+      ${hasReno?renoCell:''}
+      <td style="text-align:center;font-family:'Barlow Condensed';font-weight:900;font-size:16px">${r.total}</td>
+    </tr>`;
+  });
+
+  const totalConf = rows.reduce((s,r)=>s+r.conf,0);
+  const totalReno  = rows.reduce((s,r)=>s+r.reno,0);
+  h+=`<tr style="background:#f5f5f5;border-top:2px solid #ccc">
+    <td style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:11px">Total</td>
+    ${hasConf?`<td style="text-align:center;font-family:'Barlow Condensed';font-weight:700">${totalConf}</td>`:''}
+    ${hasReno?`<td style="text-align:center;font-family:'Barlow Condensed';font-weight:700">${totalReno}</td>`:''}
+    <td style="text-align:center;font-family:'Barlow Condensed';font-weight:900;font-size:16px">${totalConf+totalReno}</td>
+  </tr>`;
+
+  document.getElementById(id).innerHTML=h;
+}
+
+renderLoadTable('load-consultant', countBy(conf,1), countBy(reno,1));
+renderLoadTable('load-designer',   countBy(conf,2), countBy(reno,2));
+renderLoadTable('load-pm',         {},              countBy(reno,3));
+</script>
+</body>
+</html>
