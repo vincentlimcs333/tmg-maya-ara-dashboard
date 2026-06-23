@@ -158,8 +158,8 @@
 
 <!-- PM LOAD -->
 <div class="box">
-  <h3>Workload by person — Pending (15) + In Reno (72)</h3>
-  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno units only (all 22 pending are under Lex).</p>
+  <h3>Workload by person — Pending (15) + In Reno / PD (72)</h3>
+  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno + PD units only (all 15 pending are under Lex).</p>
   <div class="load-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:4px;">
     <div>
       <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:13px;margin-bottom:6px;">Consultant</div>
@@ -180,9 +180,13 @@
 <p class="lead">Blocker category and target action reflect position as of 24 Jun. Verify exact status against the live sheet.</p>
 <div class="tbl-wrap"><table id="t-conf"></table></div>
 
-<h2>2 · In Renovation / Finishing / Photo Done (72) <span style="font-size:13px;color:#666">— scheduled, running the cycle</span></h2>
+<h2>2 · In Renovation / Finishing (52) <span style="font-size:13px;color:#666">— scheduled, running the cycle</span></h2>
 <p class="lead">PM = Lex unless shown. <span class="tag t-new">NEW</span> = entered batch this week. &nbsp; <span style="color:var(--red);font-weight:700">Red ⚠</span> = target date passed &nbsp;|&nbsp; <span style="color:var(--amb);font-weight:700">Amber</span> = date uncertain &nbsp;|&nbsp; Snapshot: 24 Jun</p>
 <div class="tbl-wrap"><table id="t-reno"></table></div>
+
+<h2>3 · Photo Done — Handover Quick! (20) <span style="font-size:13px;color:#1e7d34">— reno complete, close it out</span></h2>
+<p class="lead">These units are done. Handover just needs to happen. Chase consultant + confirm owner appointment.</p>
+<div class="tbl-wrap"><table id="t-pd"></table></div>
 
 <div class="foot">
   Tags: <span class="tag t-conf">CONFIRM</span> pending confirmation · <span class="tag t-pd">PD</span> photo done — ready for handover · <span class="tag t-reno">RENO</span> in cycle · <span class="tag t-block">RISK</span> late/uncertain · <span class="tag t-new">NEW</span> newly scheduled &nbsp;|&nbsp; Verify all data against the live sheet.
@@ -333,13 +337,23 @@ function dateCls(dateStr, isDoubtful){
   return '';
 }
 
+const renoOnly = reno.filter(r => r[7] !== 'pd');
+const pdOnly   = reno.filter(r => r[7] === 'pd');
+
 document.getElementById('t-reno').innerHTML=
   "<tr><th>Unit</th><th>Batch</th><th>Consultant</th><th>Designer</th><th>PM</th><th>Target completion</th><th>Status</th></tr>"+
-  reno.map(r=>{
+  renoOnly.map(r=>{
     const cls = dateCls(r[4], r[8]);
     const label = cls==='overdue' ? r[4]+' ⚠' : r[4];
     const batch = r[10] ? `<span style="font-family:'Barlow Condensed';font-weight:700;font-size:13px">${r[10]}</span>` : '—';
     return `<tr><td class="u">${r[0]} ${tagHtml(r[9]?'new':r[7])}</td><td style="text-align:center">${batch}</td><td>${r[1]}</td><td>${r[2]}</td><td class="pm">${r[3]}</td><td class="${cls}">${label}</td><td class="why">${r[6]}</td></tr>`;
+  }).join('');
+
+document.getElementById('t-pd').innerHTML=
+  "<tr><th>Unit</th><th>Batch</th><th>Consultant</th><th>Designer</th><th>PM</th><th>Handover status</th></tr>"+
+  pdOnly.map(r=>{
+    const batch = r[10] ? `<span style="font-family:'Barlow Condensed';font-weight:700;font-size:13px">${r[10]}</span>` : '—';
+    return `<tr><td class="u">${r[0]} ${tagHtml('pd')}</td><td style="text-align:center">${batch}</td><td>${r[1]}</td><td>${r[2]}</td><td class="pm">${r[3]}</td><td class="why">${r[6].replace(/^PD — /,'').replace(/^PD$/,'—')}</td></tr>`;
   }).join('');
 
 function countBy(arr, idx){
