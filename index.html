@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maya Ara — Outstanding Units Tracker (23 Jun)</title>
+<title>Maya Ara — Outstanding Units Tracker (24 Jun)</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{ --y:#F5C800; --k:#111; --line:#e4e4e4; --bg:#fafafa;
@@ -63,21 +63,14 @@
   .uc{font-size:11px;font-family:'Barlow Condensed';font-weight:700;background:#eef;border:1px solid #ccd;border-radius:2px;padding:2px 6px;white-space:nowrap;}
   .verdict-box{background:#fdf9ff;border:1px solid #d8c0f0;border-left:6px solid #6b3fa0;border-radius:3px;padding:14px 18px;margin:14px 0;}
   .verdict-box h3{font-size:20px;margin-bottom:8px;color:#6b3fa0;}
-  .decision-box{background:#fff8f2;border:1px solid #f0c080;border-left:6px solid var(--red);border-radius:3px;padding:14px 18px;margin:14px 0;}
-  .decision-box h3{font-size:20px;margin-bottom:8px;color:var(--red);}
   .proj-box{background:#f4fff5;border:1px solid #b8dfc0;border-left:6px solid var(--grn);border-radius:3px;padding:14px 18px;margin:14px 0;}
   .proj-box h3{font-size:20px;margin-bottom:8px;color:var(--grn);}
-  .demob-box{background:#f0f4ff;border:1px solid #c0cef0;border-left:6px solid var(--blu);border-radius:3px;padding:14px 18px;margin:14px 0;}
-  .demob-box h3{font-size:20px;margin-bottom:8px;color:var(--blu);}
-  .priority-box{background:#fffdf0;border:1px solid #e8d870;border-left:6px solid #b8a000;border-radius:3px;padding:14px 18px;margin:14px 0;}
-  .priority-box h3{font-size:20px;margin-bottom:8px;color:#7a6a00;}
   .overdue{color:var(--red);font-weight:700;font-family:'Barlow Condensed';}
   .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;}
   .cat{font-size:11px;font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#555;}
   .cat-permit{color:#1f5fa8;} .cat-design{color:#6b3fa0;} .cat-defect{color:#c0610b;}
   .cat-key{color:#1e7d34;} .cat-wip{color:var(--red);} .cat-batch{color:var(--grn);}
   .cat-dec{color:var(--red);}
-  tr.decision-row>td{background:#fff8f2 !important;}
   @media(max-width:640px){
     .wrap{padding:14px 12px 48px;}
     h1{font-size:24px;}
@@ -86,7 +79,7 @@
     .kpis{grid-template-columns:repeat(2,1fr);gap:7px;}
     .kpi .n{font-size:26px;}
     .kpi .l{font-size:10px;}
-    .box,.delta,.verdict-box,.decision-box,.proj-box,.demob-box,.priority-box{padding:12px 12px;}
+    .box,.delta,.verdict-box,.proj-box{padding:12px 12px;}
     .pmbar{flex-direction:column;}
     .pmbox{min-width:unset;}
     table,.jc-table{font-size:11.5px;}
@@ -99,19 +92,19 @@
 <div class="wrap">
 <header>
   <h1>Maya Ara — Outstanding Units Tracker</h1>
-  <div class="sub">TMG · Reno + Handover · as of <span style="font-family:'Barlow Condensed';font-weight:900;font-size:22px;color:#fff;background:var(--k);padding:1px 8px;border-radius:2px;letter-spacing:.5px;">23 Jun 2026</span> · 229 units · exit target 31 Aug 2026</div>
+  <div class="sub">TMG · Reno + Handover · as of <span style="font-family:'Barlow Condensed';font-weight:900;font-size:22px;color:#fff;background:var(--k);padding:1px 8px;border-radius:2px;letter-spacing:.5px;">24 Jun 2026</span> · 229 units · exit target 31 Aug 2026</div>
 </header>
 
 <div class="caveat">
-  <b>Completion rule:</b> a unit counts complete when column O (Signed Handover Doc Link) holds a file link. Sheet snapshot: 23 Jun 2026 (142 complete / 87 outstanding). Three new completions since 15 Jun: A-20-06 (HO signed 18/6), B-23A-07 (12/6), B-26-3A (12/6).
+  <b>Completion rule:</b> a unit counts complete when column O (Signed Handover Doc Link) holds a file link. Sheet snapshot: 24 Jun 2026 (142 complete / 87 outstanding). Three new completions since 15 Jun: A-20-06 (HO signed 18/6), B-23A-07 (12/6), B-26-3A (12/6).
 </div>
 
 <div class="kpis">
   <div class="kpi y"><div class="n">229</div><div class="l">Total units</div></div>
   <div class="kpi g"><div class="n">142</div><div class="l">Complete</div><div class="d up">▲ +5 vs 9 Jun</div></div>
   <div class="kpi r"><div class="n">87</div><div class="l">Outstanding</div><div class="d up">▼ −5 vs 9 Jun</div></div>
-  <div class="kpi r"><div class="n">72</div><div class="l">In active batch</div><div class="d up">▲ +4 vs 15 Jun</div></div>
-  <div class="kpi r"><div class="n">15</div><div class="l">Pending confirmation</div><div class="d up">▼ −7 vs 15 Jun</div></div>
+  <div class="kpi r"><div class="n">65</div><div class="l">In active batch</div><div class="d up">▼ −3 vs 15 Jun</div></div>
+  <div class="kpi r"><div class="n">22</div><div class="l">Pending confirmation</div><div class="d up">▼ −2 vs 9 Jun</div></div>
 </div>
 
 <div class="delta">
@@ -120,8 +113,8 @@
     <tr><th>Metric</th><th>9 Jun</th><th>15 Jun</th><th>23 Jun</th><th>Change (15→23)</th></tr>
     <tr><td>Complete (file in col O)</td><td class="num">137</td><td class="num">139</td><td class="num">142</td><td class="up">+3</td></tr>
     <tr><td>Outstanding</td><td class="num">92</td><td class="num">90</td><td class="num">87</td><td class="up">−3</td></tr>
-    <tr><td>— in active batch</td><td class="num">68</td><td class="num">68</td><td class="num">72</td><td class="up">+4</td></tr>
-    <tr><td>— pending confirmation</td><td class="num">24</td><td class="num">22</td><td class="num">15</td><td class="up">−7</td></tr>
+    <tr><td>— in active batch</td><td class="num">68</td><td class="num">68</td><td class="num">65</td><td class="up">−3</td></tr>
+    <tr><td>— pending confirmation</td><td class="num">24</td><td class="num">22</td><td class="num">22</td><td class="flat">flat</td></tr>
   </table></div>
   <p style="font-size:12px;margin-top:8px;color:#555">Three units signed HO since 15 Jun: A-20-06 (18 Jun), B-23A-07 (12 Jun — col O updated), B-26-3A (12 Jun).</p>
   <div class="moved">
@@ -130,7 +123,6 @@
     <span class="chip"><b>B-26-3A</b> → complete (HO 12/6)</span>
     <span class="chip"><b>A-10-3A</b> → handover 24 Jun (tomorrow)</span>
     <span class="chip"><b>7 PD units</b> → handover 26 Jun</span>
-    <span class="chip"><b>7 units</b> → entered Batch 17/18 (moved from pending confirmation)</span>
   </div>
 </div>
 
@@ -159,166 +151,13 @@
       </ul>
     </div>
   </div>
-  <p style="font-size:12px;color:#555;margin:4px 0 0">Completions will cluster as Batches 13–16 finish reno late Jun–Jul, but the design-plan logjam (9 units stuck on owner behaviour) and the 4–unit Luqman/Lina gap are the structural ceiling. Those must convert in parallel for any chance of pulling the exit date in.</p>
-</div>
-
-<!-- THIS WEEK'S PRIORITIES -->
-<div class="priority-box">
-  <h3>This week's priorities — week of 23 Jun</h3>
-  <p style="font-size:13px;color:#555;margin:0 0 10px">Upcoming handovers + escalations now overdue. Verify each item by end of week.</p>
-  <div class="tbl-wrap"><table class="jc-table">
-    <tr><th>Unit</th><th>Batch</th><th>Owner</th><th>Target this week</th><th>If it clears</th><th>Risk</th></tr>
-    <tr>
-      <td class="u">A-10-3A</td><td class="num">8</td><td>Kavita / Marsha</td>
-      <td><b>Handover 24 Jun (tomorrow)</b> — confirm owner shows up, docs ready</td>
-      <td>Complete → +1 to count</td>
-      <td><span class="ok">Low</span> — HO scheduled, just needs to execute</td>
-    </tr>
-    <tr>
-      <td class="u">7 PD units (26 Jun)</td><td class="num">9 / 10 / 11</td><td>Various</td>
-      <td>A-18-06 (Sam Leong), B-19-06 (Michelle), A-25-05 (Kavita), A-16-3A (Anzzo), A-13A-05 (Anzzo), A-10-07 (Kavita), A-06-06 (Sam Leong) — all scheduled HO 26 Jun</td>
-      <td>+7 completions by end of week</td>
-      <td><span class="warn">Med</span> — 7 handovers in one day; confirm each owner confirmed</td>
-    </tr>
-    <tr>
-      <td class="u">9 Design plan units</td><td class="num">—</td><td>Jonathan / Lex</td>
-      <td><b>14-day SDP cutoff reached today (23 Jun)</b> — all 9 units stuck since 9 Jun must be escalated to SDP NOW. Confirm which are already with SDP and which need immediate escalation.</td>
-      <td>Unblocks permit → scheduling</td>
-      <td><span class="alert-red">ESCALATION DUE</span> — 14-day rule in force from today</td>
-    </tr>
-    <tr>
-      <td class="u">A-07-01</td><td class="num">17</td><td>Kavita</td>
-      <td>Confirm outcome of permit payment (was chasing last week) — permit issued or still stuck?</td>
-      <td>Enter active batch immediately — design plan + key done</td>
-      <td><span class="warn">Med</span> — carry-over from last week</td>
-    </tr>
-    <tr>
-      <td class="u">A-11-05</td><td class="num">17</td><td>Yit Soon</td>
-      <td>Confirm if developer released key (was expected last week)</td>
-      <td>Proceed immediately — design plan signed + defects done</td>
-      <td><span class="warn">Med</span> — carry-over from last week</td>
-    </tr>
-    <tr>
-      <td class="u">B-22-05</td><td class="num">—</td><td>Lina</td>
-      <td>Confirm if design plan signed + permit obtained (was targeted last week)</td>
-      <td>Enter scheduling queue</td>
-      <td><span class="warn">Med</span> — carry-over, two parallel steps</td>
-    </tr>
-    <tr>
-      <td class="u">B-26-03</td><td class="num">—</td><td>Jonathan (SC)</td>
-      <td>Confirm if reno has actually started — unconfirmed since 15 Jun</td>
-      <td>Enter active batch</td>
-      <td><span class="alert-red">High</span> — 8 days unconfirmed</td>
-    </tr>
-    <tr>
-      <td class="u">Luqman / Lina</td><td class="num">— / 18</td><td>Jonathan</td>
-      <td>B-12-07, A-27-05 (Luqman) and A-19-02 (Lina) — 14 days frozen today. Escalation consequence must be defined and enacted NOW.</td>
-      <td>Movement or formal action taken</td>
-      <td><span class="alert-red">High</span> — no defined consequence yet</td>
-    </tr>
-  </table></div>
-</div>
-
-<!-- DESIGN PLAN ESCALATION RULE -->
-<div class="box">
-  <h3>Design plan logjam — escalation rule in force</h3>
-  <p style="font-size:13px;color:#333;margin:4px 0 10px">9 units stuck because owners are MIA or withholding sign-off until developer defects are resolved. These are outside TMG's direct control — escalation is the only lever.</p>
-  <div class="tbl-wrap"><table class="jc-table">
-    <tr><th>Stage</th><th>Action</th></tr>
-    <tr><td style="font-weight:600">1 — Active chase</td><td>Consultant follows up directly with owner (calls + WA)</td></tr>
-    <tr><td style="font-weight:600">2 — 14-day cutoff</td><td>If no meaningful progress after 14 days of follow-ups → escalate to SDP for gameplan. Some units already escalated.</td></tr>
-    <tr><td style="font-weight:600">3 — Developer defect cases</td><td>Consultant coordinates with developer rep + owner simultaneously to unblock defect sign-off</td></tr>
-    <tr><td style="font-weight:600">4 — Weekly review</td><td>Units with prolonged inactivity flagged at weekly sync</td></tr>
-  </table></div>
-  <p style="font-size:12px;color:#c0392b;font-weight:700;margin:10px 0 8px">⚠ 14-DAY CUTOFF REACHED TODAY (23 Jun). All 9 units stuck since 9 Jun must be escalated to SDP immediately. Jonathan confirmed some already escalated — verify which ones and trigger SDP for the rest.</p>
-  <div class="tbl-wrap"><table class="jc-table">
-    <tr><th>Unit</th><th>Batch</th><th>Consultant</th><th>Stuck since ≥</th><th>Days elapsed (23 Jun)</th><th>SDP escalated?</th></tr>
-    <tr><td class="u">A-25-07</td><td class="num">—</td><td>Yit Soon</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span></td></tr>
-    <tr><td class="u">A-22-07</td><td class="num">—</td><td>Yit Soon</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span></td></tr>
-    <tr><td class="u">A-20-07</td><td class="num">—</td><td>Yit Soon</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span> — also needs developer VP + designer assigned</td></tr>
-    <tr><td class="u">A-23A-08</td><td class="num">—</td><td>Elene</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span></td></tr>
-    <tr><td class="u">A-23A-09</td><td class="num">—</td><td>Elene</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span> — has defect step before sign-off</td></tr>
-    <tr><td class="u">A-27-09</td><td class="num">18</td><td>Kavita</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span></td></tr>
-    <tr><td class="u">A-02-02</td><td class="num">—</td><td>Karen</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span></td></tr>
-    <tr><td class="u">A-13-06</td><td class="num">—</td><td>Sam Leong</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span></td></tr>
-    <tr><td class="u">A-12-06</td><td class="num">—</td><td>Sam Leong</td><td>9 Jun</td><td class="alert-red">14 — ESCALATE NOW</td><td><span class="alert-red">⚠ Verify + Act</span></td></tr>
-  </table></div>
-</div>
-
-<!-- LUQMAN/LINA -->
-<div class="blind">
-  <h3>⚠ Luqman / Lina — consultant non-reporting (3 units frozen 14 days)</h3>
-  <p style="font-size:13px;margin:4px 0 10px">B-12-07 and A-27-05 are under Luqman. A-19-02 is under Lina. Zero WIP movement since 9 Jun — now <b>14 days</b> (matching the SDP escalation threshold). No consequence has been defined or enforced.</p>
-  <div class="tbl-wrap"><table class="jc-table">
-    <tr><th>Unit</th><th>Batch</th><th>Consultant</th><th>Blocker</th><th>Days frozen (from 9 Jun)</th></tr>
-    <tr><td class="u">B-12-07</td><td class="num">—</td><td>Luqman / Zaf</td><td>Pending client confirmation. No WIP updates.</td><td class="alert-red">14</td></tr>
-    <tr><td class="u">A-27-05</td><td class="num">18</td><td>Luqman</td><td>Design plan signed; pending confirmation. No WIP updates.</td><td class="alert-red">14</td></tr>
-    <tr><td class="u">A-19-02</td><td class="num">18</td><td>Lina / Adibah</td><td>Pending client confirmation. No WIP updates.</td><td class="alert-red">14</td></tr>
-  </table></div>
-  <p style="font-size:13px;margin:10px 0 4px"><b>Action required now:</b> 14 days elapsed — chasing has not worked. Jonathan must define and execute a consequence TODAY: escalation to Jonathan directly, or authorise direct owner contact bypassing the consultant. Post-demob (1 Jul, 8 days away) these consultants may roll off without resolution.</p>
-  <p style="font-size:12px;color:#555;margin:0">➜ <b>Raise with Jonathan this week:</b> Name the consequence — replacement, formal warning, or direct owner contact. Do not let this drift past 1 Jul demob without a plan in place.</p>
-</div>
-
-<!-- POST-DEMOB PLAN -->
-<div class="demob-box">
-  <h3>Post-demob plan — 1 Jul handover</h3>
-  <p style="font-size:13px;color:#555;margin:0 0 10px">~50 units will still be open when the site demobilises on 1 Jul. This is the confirmed management structure.</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:10px;">
-    <div class="pmbox">
-      <div class="nm">Site execution</div>
-      <div class="ct">Lex (PM) — continues managing active batches<br>Fadilah — site support<br>Joe — defects</div>
-    </div>
-    <div class="pmbox">
-      <div class="nm">Owner & docs</div>
-      <div class="ct">Retail Consultants — owner comms, documentation, permits and approvals</div>
-    </div>
-    <div class="pmbox">
-      <div class="nm">Corporate Projects</div>
-      <div class="ct">Jon (ongoing)<br>Kavita — until end Jul<br>Nadia — until end Jul<br>Sam — until early Jul, then hybrid (like Elene)</div>
-    </div>
-  </div>
-  <div class="tbl-wrap"><table class="jc-table" style="margin-top:0">
-    <tr><th colspan="4">Escalation chain</th></tr>
-    <tr>
-      <td style="text-align:center;font-family:'Barlow Condensed';font-weight:700">1 · Consultant</td>
-      <td style="text-align:center;color:#999">→</td>
-      <td style="text-align:center;font-family:'Barlow Condensed';font-weight:700">2 · Lex (PM)</td>
-      <td style="text-align:center;color:#999">→</td>
-    </tr>
-    <tr>
-      <td style="text-align:center;font-family:'Barlow Condensed';font-weight:700">3 · Jon (Head, Corp Projects)</td>
-      <td style="text-align:center;color:#999">→</td>
-      <td style="text-align:center;font-family:'Barlow Condensed';font-weight:700">4 · Julian / Vincent</td>
-      <td></td>
-    </tr>
-  </table></div>
-  <p style="font-size:12px;color:#555;margin-top:8px">⚠ Kavita, Nadia, and Sam have exit dates. Handover plan must be confirmed before they roll off.</p>
-</div>
-
-<!-- DECISION REQUIRED -->
-<div class="decision-box">
-  <h3>❗ Decision required from Vincent — A-02-03A</h3>
-  <p style="font-size:13px;margin:4px 0 10px">Owner has not collected key — sole remaining blocker. Jonathan is holding on the SDP update until Vincent decides.</p>
-  <div class="tbl-wrap"><table class="jc-table">
-    <tr><th>Option</th><th>What it means</th><th>Implication</th></tr>
-    <tr>
-      <td style="font-weight:700;font-family:'Barlow Condensed';white-space:nowrap">A — Extend to 31 Dec</td>
-      <td>Treat as retail one-off. Continue pursuing owner through year-end.</td>
-      <td>Keeps revenue. Requires isolated execution post-demob — confirm cost exposure and sign-off authority.</td>
-    </tr>
-    <tr>
-      <td style="font-weight:700;font-family:'Barlow Condensed';white-space:nowrap">B — Void by 31 Aug</td>
-      <td>If owner does not start by 31 Aug, void the unit. Programme = 228 units.</td>
-      <td>Clean exit. Confirm commercial / SDP consequence of reducing from 229 to 228.</td>
-    </tr>
-  </table></div>
-  <p style="font-size:12px;color:#555;margin-top:8px">➜ Inform Jonathan once decided so he can update SDP.</p>
+  <p style="font-size:12px;color:#555;margin:4px 0 0">Completions will cluster as Batches 13–16 finish reno late Jun–Jul.</p>
 </div>
 
 <!-- PM LOAD -->
 <div class="box">
-  <h3>Workload by person — Pending (15) + In Reno (72)</h3>
-  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno units only (all 15 pending are under Lex).</p>
+  <h3>Workload by person — Pending (22) + In Reno (65)</h3>
+  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno units only (all 22 pending are under Lex).</p>
   <div class="load-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:4px;">
     <div>
       <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:13px;margin-bottom:6px;">Consultant</div>
@@ -335,12 +174,12 @@
   </div>
 </div>
 
-<h2>1 · Pending Confirmation (15) <span style="font-size:13px;color:#666">— not yet in a batch</span></h2>
-<p class="lead">Blocker category and target action reflect position as of 23 Jun. Verify exact status against the live sheet.</p>
+<h2>1 · Pending Confirmation (22) <span style="font-size:13px;color:#666">— not yet in a batch</span></h2>
+<p class="lead">Blocker category and target action reflect position as of 24 Jun. Verify exact status against the live sheet.</p>
 <div class="tbl-wrap"><table id="t-conf"></table></div>
 
 <h2>2 · In Renovation / Finishing (65) <span style="font-size:13px;color:#666">— scheduled, running the cycle</span></h2>
-<p class="lead">PM = Lex unless shown. <span class="tag t-new">NEW</span> = entered batch this week. &nbsp; <span style="color:var(--red);font-weight:700">Red ⚠</span> = target date passed &nbsp;|&nbsp; <span style="color:var(--amb);font-weight:700">Amber</span> = date uncertain</p>
+<p class="lead">PM = Lex unless shown. <span class="tag t-new">NEW</span> = entered batch this week. &nbsp; <span style="color:var(--red);font-weight:700">Red ⚠</span> = target date passed &nbsp;|&nbsp; <span style="color:var(--amb);font-weight:700">Amber</span> = date uncertain &nbsp;|&nbsp; Snapshot: 23 Jun</p>
 <div class="tbl-wrap"><table id="t-reno"></table></div>
 
 <div class="foot">
@@ -355,9 +194,12 @@ const conf = [
   ["A-25-07","Yit Soon","Zaf","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
   ["A-22-07","Yit Soon","Zaf","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
   ["A-20-07","Yit Soon","Zaf","design","Pending VP from developer + design plan (designer needed).","Pending developer VP; assign designer → sign-off"],
+  ["A-11-05","Yit Soon","Nadia","key","Design plan signed. Defects done. Waiting for developer to release key (Yit Soon chasing — expects this week).","Key release → proceed immediately (all docs ready)"],
   ["A-23A-08","Elene","—","design","CE paid. Owner not responding on design plan sign-off.","Chase owner sign-off → permit → schedule"],
   ["A-23A-09","Elene","—","design","CE paid. Pending defect + design plan sign-off.","Resolve defect → owner sign-off"],
   ["A-27-02","Kavita","—","permit","Design plan signed. Defects done. Permit submitted — waiting approval.","Permit approval → schedule (this week)"],
+  ["A-27-09","Kavita","—","defect","Defects ongoing. Design plan unsigned. Permit pending.","Defect completion → owner sign-off → permit"],
+  ["A-26-02","Karen","—","batch","Confirmed Batch 17. Kicked off 15 Jun. Lex capacity OK.","In Batch 17 ✓"],
   ["B-26-03","Jonathan","—","permit","Start claimed for w/c 15 Jun — NOT YET CONFIRMED. All docs ready; maincon must agree defect + reno plan concurrently.","⚠ Verify with Jonathan: has this started? Confirm batch assignment."],
   ["A-02-02","Karen","—","defect","Defects ongoing. Design plan unsigned.","Resolve defect → chase sign-off"],
   ["A-02-03A","Karen","—","decision","Owner has NOT collected key — sole blocker. Vincent's decision pending: extend to Dec (Option A) or void by 31 Aug (Option B).","⚠ Await Vincent's decision → update SDP"],
@@ -366,7 +208,11 @@ const conf = [
   ["A-21-06","Sam Leong","Zaf","defect","Defects ongoing. Owner refuses to sign design plan until defects done. Key not collected. Sam Leong pushing sign-off this week.","Sam Leong: commit defect-done date + design plan sign-off (no date yet)"],
   ["B-22-05","Lina","Nadia","design","Design plan signature + reno permit pending. SC: Lina. Target: settle both this week.","Sign-off + permit this week → enter scheduling"],
   ["B-27-07","Samuel Kwan","—","defect","Design plan signed. Defect pending. Key not collected. Samuel Kwan following up Thu/Fri.","Samuel Kwan: commit defect-done date (no date yet)"],
+  ["A-18-03","Lina","—","permit","VO signed. Permit pending approval.","Permit approval → schedule (this week)"],
+  ["A-19-02","Lina","Adibah","wip","Pending client confirmation. No WIP updates from Lina.","Chase client confirmation"],
   ["B-12-07","Luqman","Zaf","wip","Pending client confirmation. No WIP updates from Luqman for weeks.","Chase Luqman for update + client confirmation"],
+  ["A-07-01","Kavita","Nadia","permit","Design plan signed. Key collected. Reno permit pending — payment to MO (deposit) outstanding. Kavita chasing owner + MO (target this week).","Payment cleared → permit → enter batch"],
+  ["A-27-05","Luqman","—","wip","Design plan signed. Pending confirmation. No recent WIP from Luqman.","Chase Luqman → confirm + permit → schedule"],
 ];
 
 const catLabel = {
@@ -443,16 +289,9 @@ const reno = [
  ["B-26-08","Yit Soon","Zaf","Lex","1/8/26 †","—","Pending defect/permit/sign","reno",true,false,16],
  ["A-23-06","Yit Soon","Adibah","Lex","10/8/26 †","—","Built-in — pending permit &amp; sign","reno",true,false,16],
  ["B-27-05","Samuel Kwan","Nadia","Lex","1/8/26 †","—","Built-in","reno",true,false,16],
- ["A-21-08","Luqman","—","Lex","—","—","Started 10 Jun","reno",false,false,17],
- ["B-17-06","Anzzo","Zaf","Lex","—","—","In reno — built-in","reno",false,false,17],
- ["B-17-07","Anzzo","Atdee","Lex","—","—","In reno — built-in","reno",false,false,17],
- ["A-07-01","Kavita","Nadia","Lex","—","—","In reno — built-in (Batch 17)","reno",false,false,17],
- ["A-11-05","Yit Soon","Nadia","Lex","—","—","In reno — built-in (Batch 17)","reno",false,false,17],
- ["A-18-03","Lina","—","Lex","3/7/26","—","Batch 18 — just started (22 Jun)","new",false,true,18],
- ["A-26-02","Karen","—","Lex","3/7/26","—","Batch 18 — just started (22 Jun)","new",false,true,18],
- ["A-27-05","Luqman","—","Lex","3/7/26","—","Batch 18 — just started (22 Jun)","new",false,true,18],
- ["A-27-09","Kavita","—","Lex","3/7/26","—","Batch 18 — just started (22 Jun)","new",false,true,18],
- ["A-19-02","Lina","Adibah","Lex","—","—","Batch 18 — built-in, just started (22 Jun)","new",false,true,18],
+ ["A-21-08","Luqman","—","Lex","—","—","Started 10 Jun","new",false,true,17],
+ ["B-17-06","Anzzo","Zaf","Lex","—","—","Pending start","new",false,true,17],
+ ["B-17-07","Anzzo","Atdee","Lex","—","—","Started 15 Jun","new",false,true,17],
 ];
 
 function tagHtml(t){
@@ -483,7 +322,7 @@ function parseDate(s){
   const [d,m,y] = parts.map(Number);
   return new Date(2000+y, m-1, d);
 }
-const today = new Date(2026,5,23);
+const today = new Date(2026,5,24);
 
 function dateCls(dateStr, isDoubtful){
   const d = parseDate(dateStr);
