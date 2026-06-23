@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maya Ara — Outstanding Units Tracker (24 Jun)</title>
-<meta property="og:title" content="Maya Ara — Outstanding Units Tracker (24 Jun)">
-<meta property="og:description" content="142 complete · 87 outstanding · 72 in reno · 15 pending confirmation · as of 24 Jun 2026">
+<title>Maya Ara — Outstanding Units Tracker (23 Jun)</title>
+<meta property="og:title" content="Maya Ara — Outstanding Units Tracker (23 Jun)">
+<meta property="og:description" content="142 complete · 87 outstanding · 72 in reno · 15 pending confirmation · as of 23 Jun 2026">
 <meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -95,11 +95,11 @@
 <div class="wrap">
 <header>
   <h1>Maya Ara — Outstanding Units Tracker</h1>
-  <div class="sub">TMG · Reno + Handover · as of <span style="font-family:'Barlow Condensed';font-weight:900;font-size:22px;color:#fff;background:var(--k);padding:1px 8px;border-radius:2px;letter-spacing:.5px;">24 Jun 2026</span> · 229 units · exit target 31 Aug 2026</div>
+  <div class="sub">TMG · Reno + Handover · as of <span style="font-family:'Barlow Condensed';font-weight:900;font-size:22px;color:#fff;background:var(--k);padding:1px 8px;border-radius:2px;letter-spacing:.5px;">23 Jun 2026</span> · 229 units · exit target 31 Aug 2026</div>
 </header>
 
 <div class="caveat">
-  <b>Completion rule:</b> a unit counts complete when column O (Signed Handover Doc Link) holds a file link. Sheet snapshot: 24 Jun 2026 (142 complete / 87 outstanding). Three new completions since 15 Jun: A-20-06 (HO signed 18/6), B-23A-07 (12/6), B-26-3A (12/6).
+  <b>Completion rule:</b> a unit counts complete when column O (Signed Handover Doc Link) holds a file link. Sheet snapshot: 23 Jun 2026 (142 complete / 87 outstanding). Three new completions since 15 Jun: A-20-06 (HO signed 18/6), B-23A-07 (12/6), B-26-3A (12/6).
 </div>
 
 <div class="kpis">
@@ -180,11 +180,11 @@
 </div>
 
 <h2>1 · Pending Confirmation (15) <span style="font-size:13px;color:#666">— not yet in a batch</span></h2>
-<p class="lead">Blocker category and target action reflect position as of 24 Jun. Verify exact status against the live sheet.</p>
+<p class="lead">Blocker category and target action reflect position as of 23 Jun. Verify exact status against the live sheet.</p>
 <div class="tbl-wrap"><table id="t-conf"></table></div>
 
 <h2>2 · In Renovation / Finishing (52) <span style="font-size:13px;color:#666">— scheduled, running the cycle</span></h2>
-<p class="lead">PM = Lex unless shown. <span class="tag t-new">NEW</span> = entered batch this week. &nbsp; <span style="color:var(--red);font-weight:700">Red ⚠</span> = target date passed &nbsp;|&nbsp; <span style="color:var(--amb);font-weight:700">Amber</span> = date uncertain &nbsp;|&nbsp; Snapshot: 24 Jun</p>
+<p class="lead">PM = Lex unless shown. <span class="tag t-new">NEW</span> = entered batch this week. &nbsp; <span style="color:var(--red);font-weight:700">Red ⚠</span> = target date passed &nbsp;|&nbsp; <span style="color:var(--amb);font-weight:700">Amber</span> = date uncertain &nbsp;|&nbsp; Snapshot: 23 Jun</p>
 <div class="tbl-wrap"><table id="t-reno"></table></div>
 
 <h2>3 · Photo Done — Handover Quick! (20) <span style="font-size:13px;color:#1e7d34">— reno complete, close it out</span></h2>
@@ -331,7 +331,7 @@ function parseDate(s){
   const [d,m,y] = parts.map(Number);
   return new Date(2000+y, m-1, d);
 }
-const today = new Date(2026,5,24);
+const today = new Date(2026,5,23);
 
 function dateCls(dateStr, isDoubtful){
   const d = parseDate(dateStr);
