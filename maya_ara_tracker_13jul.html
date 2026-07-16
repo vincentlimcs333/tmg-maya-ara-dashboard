@@ -99,7 +99,7 @@
 </header>
 
 <div class="caveat">
-  <b>Completion rule:</b> a unit counts complete when column O (Signed Handover Doc Link) holds a file link. Sheet snapshot: 13 Jul 2026. Raw col O count was 174, but 2 units — <b>A-07-03</b> and <b>A-16-07</b> — have a <i>future</i> date (27/07/2026 and 20/07/2026) typed into col O instead of a filename, and neither has a Handover Signed Date (col P) filled in. That's a stronger signal than the 30 Jun date-vs-filename cases (which at least had past dates + signed dates). Treated both as <b>still outstanding</b> this week: corrected complete = <b>172</b> / outstanding = <b>57</b>. Worth Jonathan/Lex confirming these two didn't actually hand over.
+  <b>Completion rule:</b> a unit counts complete when column O (Signed Handover Doc Link) holds a file link. Sheet snapshot: 13 Jul 2026. Raw col O count was 174, but 2 units — <b>A-07-03</b> and <b>A-16-07</b> — have a <i>future</i> date (27/07/2026 and 20/07/2026) typed into col O instead of a filename, and neither has a Handover Signed Date (col P) filled in. That's a stronger signal than the 30 Jun date-vs-filename cases (which at least had past dates + signed dates). Treated both as <b>still outstanding</b> this week: corrected complete = <b>172</b> / outstanding = <b>57</b>. <b>Confirmed by Jonathan (16 Jul WhatsApp):</b> A-07-03 not yet complete — he's directly handling it, QCing + fixing defects on a technically complex unit (home karaoke setup with sound insulation + smart home); owner is fine with the timeline. A-16-07 — he's checking with Lex, not yet confirmed either way.
 </div>
 
 <div class="kpis">
@@ -127,6 +127,7 @@
     <span class="chip"><b>B-12-07, B-22-05, A-25-07, A-20-07, A-23A-09, A-02-03A, A-02-02</b> → remaining 7 pending confirmation units</span>
     <span class="chip"><b>A-12-06, A-13-06, A-23A-08, B-27-07, A-21-06, A-22-07</b> → moved into new Batch 19 (6/7–17/7), all targeting 4–14 Sep — past the 31 Aug exit target</span>
     <span class="chip"><b>A-07-03, A-16-07</b> → flagged as false-positive completions this week (see caveat above), moved back to outstanding</span>
+    <span class="chip"><b>16 Jul:</b> Jonathan confirms A-07-03 not complete (directly handling); checking A-16-07 with Lex</span>
   </div>
 </div>
 
@@ -134,7 +135,7 @@
 <div class="proj-box">
   <h3>Velocity &amp; Forecast — can we hit 31 Aug?</h3>
   <div style="background:#fff;border:1px solid #b8dfc0;border-radius:3px;padding:10px 12px;margin-bottom:12px;font-size:13px;">
-    No fresh WhatsApp checkpoint from Jonathan this week — figures below are computed directly from the 13 Jul sheet pull. Jonathan's 17 Jun / 2 Jul projection table is kept below as the last standing forecast reference.
+    <span style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--grn);">16 Jul checkpoint (Jonathan, WhatsApp)</span> — asked directly about the Batch 19 Sept dates: he'll verify the actual completion dates with Lex and update, but confirmed the read is directionally right — <i>"if count 2 months will miss end Aug"</i> for units that recently started. He qualified it though: <i>"these batch not that many units"</i> — i.e. only 6 units, so the 31 Aug slip is real but narrow in scope, not a program-wide blowout. Also directly addressed A-07-03 (he's handling it, not yet complete) and A-16-07 (checking with Lex).
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:10px;">
     <div>
@@ -152,13 +153,13 @@
       <ul style="font-size:13px;margin:0;padding-left:18px;">
         <li><b>Need:</b> ~8/week to clear 57 open units by 31 Aug (7 weeks left)</li>
         <li><b>Actual:</b> 8 completions in the last 2 weeks (30 Jun–13 Jul) — ~4/week, roughly half the needed pace</li>
-        <li><b>New risk:</b> Batch 19 (6 units) all target 4–14 Sep — already past 31 Aug</li>
+        <li><b>Confirmed risk (narrow):</b> Batch 19 (6 units only) will likely miss 31 Aug per Jonathan — but he stresses it's a small slice, not the whole program</li>
         <li><b>Standing risk:</b> A-02-03A — key still not collected; SDP deadline 31 Jul, void if uncollected by 31 Aug</li>
         <li><b>Real pressure:</b> Batch 15–19 — target dates run 17 Jul through 14 Sep, no slack</li>
       </ul>
     </div>
   </div>
-  <p style="font-size:12px;color:#555;margin:4px 0 0"><b>Verdict:</b> 31 Aug is at risk again — completions slowed sharply from the 30 Jun burst, and Batch 19's own target dates already miss the deadline. Worth checking with Jonathan whether the 2 Jul "&lt;5 to start, ahead of pace" read still holds.</p>
+  <p style="font-size:12px;color:#555;margin:4px 0 0"><b>Verdict:</b> 31 Aug is at risk on pace (~4/week actual vs ~8/week needed), and Batch 19's 6 units are confirmed likely to slip past it — but Jonathan frames that slip as contained to those 6 units, not a program-wide miss. Awaiting his follow-up with Lex on exact dates for A-16-07 and the Batch 19 units.</p>
 </div>
 
 <!-- PM LOAD -->
@@ -222,8 +223,8 @@ const reno = [
  ["B-13-08","Anzzo","—","Lex","10/4/26","—","In reno","reno",false,false,9],
  ["A-03-01","Jonathan","Marsha","Lex","17/5/26","—","In reno — built-in","reno",false,false,10],
  ["B-25-07","Samuel Kwan","Qat","Lex","13/5/26","—","In reno — built-in","reno",false,false,10],
- ["A-07-03","Jonathan","Marsha","Syaharil","30/6/26","—","In reno — built-in ⚠ col O shows future date 27/7/26, not a file; no HO signed date — treated as still outstanding","reno",false,false,11],
- ["A-16-07","Sam Leong","Nadia","Lex","7/6/26","—","In reno — built-in ⚠ col O shows future date 20/7/26, not a file; no HO signed date — treated as still outstanding","reno",false,false,12],
+ ["A-07-03","Jonathan","Marsha","Syaharil","30/6/26","—","In reno — built-in ⚠ col O showed future date 27/7/26, not a file. Confirmed by Jonathan 16 Jul: not complete — he's directly handling, QCing + fixing defects. Technically complex (home karaoke, sound insulation, smart home); owner ok with timeline.","reno",false,false,11],
+ ["A-16-07","Sam Leong","Nadia","Lex","7/6/26","—","In reno — built-in ⚠ col O showed future date 20/7/26, not a file; no HO signed date. Jonathan checking with Lex as of 16 Jul — not yet confirmed either way.","reno",false,false,12],
  ["A-13A-3A","Anzzo","—","Lex","13/6/26","—","In reno","reno",false,false,13],
  ["B-20-06","Anzzo","—","Lex","20/6/26","—","In reno","reno",false,false,13],
  ["B-13-06","Anzzo","Atdee","Lex","20/6/26","—","In reno — built-in","reno",false,false,13],
