@@ -10,7 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{ --y:#F5C800; --k:#111; --line:#e4e4e4; --bg:#fafafa;
-    --red:#c0392b; --amb:#b8860b; --grn:#1e7d34; --blu:#1f5fa8;}
+    --red:#c0392b; --amb:#b8860b; --grn:#1e7d34; --blu:#1f5fa8;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100;
+    --ink-2:#52514e; --ink-3:#898781; --grid:#e1e0d9;}
   *{box-sizing:border-box;}
   body{margin:0;font-family:'Barlow',system-ui,sans-serif;color:var(--k);background:var(--bg);font-size:14px;line-height:1.45;}
   .wrap{max-width:1180px;margin:0 auto;padding:24px 18px 60px;}
@@ -74,6 +76,24 @@
   .cat-permit{color:#1f5fa8;} .cat-design{color:#6b3fa0;} .cat-defect{color:#c0610b;}
   .cat-key{color:#1e7d34;} .cat-wip{color:var(--red);} .cat-batch{color:var(--grn);}
   .cat-dec{color:var(--red);}
+
+  .viz-root{position:relative;}
+  .viz-legend{display:flex;flex-wrap:wrap;gap:14px 20px;margin:2px 0 10px;}
+  .viz-legend-item{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--k);}
+  .viz-legend-key{width:16px;height:3px;border-radius:2px;flex-shrink:0;}
+  .viz-chart-wrap{width:100%;}
+  .viz-chart-wrap svg{display:block;width:100%;height:auto;}
+  .viz-axis-label{font-family:'Barlow',system-ui,sans-serif;font-size:11px;fill:var(--ink-3);}
+  .viz-end-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;}
+  .viz-gridline{stroke:var(--grid);stroke-width:1;}
+  .viz-crosshair{stroke:var(--ink-3);stroke-width:1;pointer-events:none;opacity:0;}
+  .viz-tooltip{position:absolute;pointer-events:none;background:var(--k);color:#fff;border-radius:4px;padding:8px 10px;font-size:12px;line-height:1.5;opacity:0;transition:opacity .08s;z-index:5;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.18);}
+  .viz-tooltip .vt-date{font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.4px;font-size:11px;color:#ddd;margin-bottom:4px;}
+  .viz-tooltip .vt-row{display:flex;align-items:center;gap:6px;}
+  .viz-tooltip .vt-key{width:10px;height:2px;flex-shrink:0;}
+  .viz-tooltip .vt-val{font-family:'Barlow Condensed';font-weight:700;font-size:13px;}
+  .viz-tooltip .vt-name{color:#ccc;}
+  .viz-hit{fill:transparent;}
   @media(max-width:640px){
     .wrap{padding:14px 12px 48px;}
     h1{font-size:24px;}
@@ -88,6 +108,9 @@
     table,.jc-table{font-size:11.5px;}
     th,td,.jc-table th,.jc-table td{padding:5px 6px;}
     .load-grid{grid-template-columns:1fr !important;}
+    .viz-legend{gap:8px 14px;}
+    .viz-legend-item{font-size:11.5px;}
+    .viz-tooltip{font-size:11px;padding:7px 9px;}
   }
 </style>
 </head>
@@ -127,6 +150,14 @@
     <span class="chip"><b>B-12-07, A-25-07, A-20-07, A-23A-09, A-02-03A, A-02-02</b> → pending confirmation, unchanged from 21 Jul</span>
     <span class="chip"><b>Batch 19/20 dates</b> → unchanged from 21 Jul; Jonathan's promised Lex follow-up still not reflected in the sheet</span>
   </div>
+</div>
+
+<!-- TREND -->
+<div class="delta viz-root" style="border-left-color:var(--blu)">
+  <h3>Trend — 9 Jun → 27 Jul</h3>
+  <p class="lead" style="margin-bottom:10px">Same numbers as the table above, plotted over time. Hover for exact values on any date.</p>
+  <div id="trend-legend" class="viz-legend"></div>
+  <div id="trend-chart-wrap" class="viz-chart-wrap"></div>
 </div>
 
 <!-- VELOCITY & FORECAST -->
@@ -356,6 +387,154 @@ function renderLoadTable(id, confCounts, renoCounts){
 renderLoadTable('load-consultant', countBy(conf,1), countBy(reno,1));
 renderLoadTable('load-designer',   countBy(conf,2), countBy(reno,2));
 renderLoadTable('load-pm',         {},              countBy(reno,3));
+
+// ---- TREND CHART ----
+const trendDates = ["9 Jun","15 Jun","23 Jun","30 Jun","13 Jul","21 Jul","27 Jul"];
+const trendSeries = [
+  {key:"complete", name:"Complete",            color:"var(--s1)", hex:"#2a78d6", values:[137,139,142,164,172,178,179]},
+  {key:"outstanding", name:"Outstanding",      color:"var(--s2)", hex:"#eb6834", values:[92,90,87,65,57,51,50]},
+  {key:"inbatch", name:"In active batch",      color:"var(--s3)", hex:"#1baf7a", values:[68,68,72,52,50,45,44]},
+  {key:"pending", name:"Pending confirmation", color:"var(--s4)", hex:"#eda100", values:[24,22,15,13,7,6,6]},
+];
+
+document.getElementById('trend-legend').innerHTML = trendSeries.map(s =>
+  `<span class="viz-legend-item"><span class="viz-legend-key" style="background:${s.color}"></span>${s.name}</span>`
+).join('');
+
+function computeTicks(maxVal){
+  const rawStep = maxVal / 4;
+  const mag = Math.pow(10, Math.floor(Math.log10(rawStep || 1)));
+  const norm = rawStep / mag;
+  let step = norm <= 1 ? 1*mag : norm <= 2 ? 2*mag : norm <= 5 ? 5*mag : 10*mag;
+  const niceMax = Math.ceil(maxVal / step) * step;
+  const ticks = [];
+  for(let v = 0; v <= niceMax + 1e-9; v += step) ticks.push(Math.round(v));
+  return {niceMax, ticks};
+}
+
+function renderTrendChart(){
+  const wrap = document.getElementById('trend-chart-wrap');
+  const width = Math.max(300, wrap.clientWidth || wrap.parentElement.clientWidth);
+  const rotateLabels = width < 560;
+  const height = rotateLabels ? 300 : 288;
+  const margin = {top: 14, right: 40, bottom: rotateLabels ? 52 : 32, left: 34};
+  const chartW = width - margin.left - margin.right;
+  const chartH = height - margin.top - margin.bottom;
+
+  const maxVal = Math.max(...trendSeries.flatMap(s => s.values));
+  const {niceMax, ticks} = computeTicks(maxVal);
+
+  const n = trendDates.length;
+  const xPos = i => margin.left + (chartW * i) / (n - 1);
+  const yPos = v => margin.top + chartH - (v / niceMax) * chartH;
+
+  let svg = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="Trend of unit counts from 9 Jun to 27 Jul 2026">`;
+
+  // gridlines + y ticks
+  ticks.forEach(t => {
+    const y = yPos(t);
+    svg += `<line class="viz-gridline" x1="${margin.left}" y1="${y}" x2="${width - margin.right}" y2="${y}"/>`;
+    svg += `<text class="viz-axis-label" x="${margin.left - 8}" y="${y + 4}" text-anchor="end">${t}</text>`;
+  });
+
+  // x-axis labels
+  trendDates.forEach((d, i) => {
+    const x = xPos(i);
+    const y = height - margin.bottom + 16;
+    if(rotateLabels){
+      svg += `<text class="viz-axis-label" x="${x}" y="${y}" text-anchor="end" transform="rotate(-40 ${x} ${y})">${d}</text>`;
+    } else {
+      svg += `<text class="viz-axis-label" x="${x}" y="${y}" text-anchor="middle">${d}</text>`;
+    }
+  });
+
+  // series lines
+  trendSeries.forEach(s => {
+    const d = s.values.map((v,i) => `${i===0?'M':'L'}${xPos(i)},${yPos(v)}`).join(' ');
+    svg += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  });
+
+  // end markers
+  trendSeries.forEach(s => {
+    const i = n - 1;
+    svg += `<circle cx="${xPos(i)}" cy="${yPos(s.values[i])}" r="4" fill="${s.color}" stroke="#fff" stroke-width="2"/>`;
+  });
+
+  // end labels — collision-avoided, with leader lines
+  const minGap = 15;
+  const endpoints = trendSeries.map(s => ({
+    s, actualY: yPos(s.values[n-1]), labelY: yPos(s.values[n-1])
+  })).sort((a,b) => a.actualY - b.actualY);
+  for(let i = 1; i < endpoints.length; i++){
+    if(endpoints[i].labelY - endpoints[i-1].labelY < minGap){
+      endpoints[i].labelY = endpoints[i-1].labelY + minGap;
+    }
+  }
+  const lastX = xPos(n-1);
+  endpoints.forEach(e => {
+    if(Math.abs(e.labelY - e.actualY) > 2){
+      svg += `<line x1="${lastX+5}" y1="${e.actualY}" x2="${lastX+11}" y2="${e.labelY}" stroke="${e.s.color}" stroke-width="1"/>`;
+    }
+    svg += `<text class="viz-end-label" x="${lastX+13}" y="${e.labelY+4}" fill="${e.s.color}">${e.s.values[n-1]}</text>`;
+  });
+
+  // hover layer: crosshair + hit rect + per-series hover dots
+  svg += `<line id="trend-crosshair" class="viz-crosshair" x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${margin.top+chartH}"/>`;
+  trendSeries.forEach(s => {
+    svg += `<circle class="trend-hover-dot" data-key="${s.key}" r="5" fill="${s.color}" stroke="#fff" stroke-width="2" opacity="0" cx="0" cy="0"/>`;
+  });
+  svg += `<rect id="trend-hit" class="viz-hit" x="${margin.left}" y="${margin.top}" width="${chartW}" height="${chartH}"/>`;
+  svg += `</svg>`;
+  svg += `<div id="trend-tooltip" class="viz-tooltip"></div>`;
+
+  wrap.innerHTML = svg;
+
+  const hit = document.getElementById('trend-hit');
+  const crosshair = document.getElementById('trend-crosshair');
+  const tooltip = document.getElementById('trend-tooltip');
+  const hoverDots = wrap.querySelectorAll('.trend-hover-dot');
+
+  function showAt(idx){
+    const x = xPos(idx);
+    crosshair.setAttribute('x1', x);
+    crosshair.setAttribute('x2', x);
+    crosshair.style.opacity = 1;
+    hoverDots.forEach(dot => {
+      const s = trendSeries.find(s => s.key === dot.dataset.key);
+      dot.setAttribute('cx', x);
+      dot.setAttribute('cy', yPos(s.values[idx]));
+      dot.setAttribute('opacity', 1);
+    });
+    tooltip.innerHTML = `<div class="vt-date">${trendDates[idx]}</div>` + trendSeries.map(s =>
+      `<div class="vt-row"><span class="vt-key" style="background:${s.color}"></span><span class="vt-val">${s.values[idx]}</span> <span class="vt-name">${s.name}</span></div>`
+    ).join('');
+    tooltip.style.opacity = 1;
+    let left = x + 14;
+    if(left + 150 > width) left = x - 150 - 14;
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = (margin.top + 4) + 'px';
+  }
+  function hideAll(){
+    crosshair.style.opacity = 0;
+    hoverDots.forEach(dot => dot.setAttribute('opacity', 0));
+    tooltip.style.opacity = 0;
+  }
+  hit.addEventListener('pointermove', e => {
+    const rect = wrap.querySelector('svg').getBoundingClientRect();
+    const scale = width / rect.width;
+    const mx = (e.clientX - rect.left) * scale;
+    const idx = Math.max(0, Math.min(n-1, Math.round((mx - margin.left) / (chartW / (n-1)))));
+    showAt(idx);
+  });
+  hit.addEventListener('pointerleave', hideAll);
+}
+
+renderTrendChart();
+let trendResizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(trendResizeTimer);
+  trendResizeTimer = setTimeout(renderTrendChart, 150);
+});
 </script>
 </body>
 </html>
