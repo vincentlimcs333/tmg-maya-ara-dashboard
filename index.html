@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maya Ara — Outstanding Units Tracker (1 Sep)</title>
-<meta property="og:title" content="Maya Ara — Outstanding Units Tracker (1 Sep)">
-<meta property="og:description" content="138 complete · 91 outstanding · 67 in reno · 24 pending confirmation · as of 1 Sep 2026 — restated after a sheet-wide data correction">
+<title>Maya Ara — Outstanding Units Tracker (27 Jul)</title>
+<meta property="og:title" content="Maya Ara — Outstanding Units Tracker (27 Jul)">
+<meta property="og:description" content="179 complete · 50 outstanding · 44 in reno · 6 pending confirmation · as of 27 Jul 2026">
 <meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -28,7 +28,7 @@
   .kpi.y{border-top-color:var(--y);} .kpi.r{border-top-color:var(--red);} .kpi.g{border-top-color:var(--grn);}
   .kpi .l{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#666;margin-top:4px;}
   .kpi .d{font-size:12px;font-weight:700;margin-top:3px;font-family:'Barlow Condensed';}
-  .up{color:var(--grn);} .flat{color:#999;} .restated{color:var(--amb);}
+  .up{color:var(--grn);} .flat{color:#999;}
   h2{font-size:24px;margin:34px 0 4px;border-bottom:3px solid var(--k);padding-bottom:4px;}
   .lead{font-size:13px;color:#555;margin:0 0 12px;}
   table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:12.5px;}
@@ -118,84 +118,84 @@
 <div class="wrap">
 <header>
   <h1>Maya Ara — Outstanding Units Tracker</h1>
-  <div class="sub">TMG · Reno + Handover · as of <span style="font-family:'Barlow Condensed';font-weight:900;font-size:22px;color:#fff;background:var(--k);padding:1px 8px;border-radius:2px;letter-spacing:.5px;">1 Sep 2026</span> · 229 units · exit target 31 Aug 2026 <span style="color:var(--red);font-weight:700">— passed, not met</span></div>
+  <div class="sub">TMG · Reno + Handover · as of <span style="font-family:'Barlow Condensed';font-weight:900;font-size:22px;color:#fff;background:var(--k);padding:1px 8px;border-radius:2px;letter-spacing:.5px;">27 Jul 2026</span> · 229 units · exit target 31 Aug 2026</div>
 </header>
 
-<div class="caveat" style="background:#fff4e0;border-color:var(--red);border-left-color:var(--red);">
-  <b>Major data correction this update — read before the numbers below.</b> The sheet has been fixed at scale for the col-O data-entry problem this dashboard has been flagging since 30 Jun (a target/expected date typed into the "Signed Handover Doc Link" column instead of a real signed file — first 3 units, then 5, now corrected everywhere). The person maintaining the sheet has gone through and cleared col O for every unit where it held a date instead of a filename, moving that date into the correct "Target Handover Date" column. Net effect: <b>41 units that this dashboard reported as complete as recently as 27 Jul are confirmed NOT complete.</b> None of them were ever actually done — the sheet was just wrong, for months, at a scale far bigger than the handful of cases we'd caught. Zero units moved the other way (no genuine new completions this pull). Corrected complete: <b>138</b> (was reported 179) / outstanding: <b>91</b> (was 50). Batches 17–20 have also been dissolved — the 24 units that were in them (including all of Batch 19's unverified Sept dates) are back in Pending Confirmation. <b>Every "complete" figure this dashboard reported between 30 Jun and 27 Jul should be treated as unreliable</b> — see the Trend chart and delta table below for the restated history.
+<div class="caveat">
+  <b>Completion rule:</b> a unit counts complete when column O (Signed Handover Doc Link) holds a file link AND is corroborated by a Handover Signed Date in col P. Sheet snapshot: 27 Jul 2026. Raw col O count was 184, but <b>5 units</b> have a bare/future date in col O with no col P date — corrected complete = <b>179</b> / outstanding = <b>50</b>. The false-positive count is <b>growing, not shrinking</b>: A-07-03 (recurring, target pushed 27/7→31/7), A-03-06, A-18-08 (all carried over from 21 Jul) — plus <b>two new ones this week, A-13A-07 and A-07-02</b>, both of which had a correctly-blank col O last week and now show a bare date instead of a signed file. Worth raising with Lex as a pattern, not one-off typos — 5 units across 4 different consultants now show it.
 </div>
 
 <div class="kpis">
   <div class="kpi y"><div class="n">229</div><div class="l">Total units</div></div>
-  <div class="kpi g"><div class="n">138</div><div class="l">Complete</div><div class="d restated">↺ restated — was 179</div></div>
-  <div class="kpi r"><div class="n">91</div><div class="l">Outstanding</div><div class="d restated">↺ restated — was 50</div></div>
-  <div class="kpi r"><div class="n">67</div><div class="l">In active batch</div><div class="d restated">↺ restated — was 44</div></div>
-  <div class="kpi r"><div class="n">24</div><div class="l">Pending confirmation</div><div class="d restated">↺ restated — was 6</div></div>
+  <div class="kpi g"><div class="n">179</div><div class="l">Complete</div><div class="d up">▲ +1 vs 21 Jul</div></div>
+  <div class="kpi r"><div class="n">50</div><div class="l">Outstanding</div><div class="d up">▼ −1 vs 21 Jul</div></div>
+  <div class="kpi r"><div class="n">44</div><div class="l">In active batch</div><div class="d up">▼ −1 vs 21 Jul</div></div>
+  <div class="kpi r"><div class="n">6</div><div class="l">Pending confirmation</div><div class="d up">flat vs 21 Jul</div></div>
 </div>
 
 <!-- TREND -->
-<div class="delta viz-root" style="border-left-color:var(--red)">
-  <h3>Trend — 9 Jun → 1 Sep</h3>
-  <p class="lead" style="margin-bottom:10px">Same numbers as the table below, plotted over time. <b>The cliff at 1 Sep is the data correction described above, not a week of lost work</b> — hover for exact values on any date.</p>
+<div class="delta viz-root" style="border-left-color:var(--blu)">
+  <h3>Trend — 9 Jun → 27 Jul</h3>
+  <p class="lead" style="margin-bottom:10px">Same numbers as the table below, plotted over time. Hover for exact values on any date.</p>
   <div id="trend-legend" class="viz-legend"></div>
   <div id="trend-chart-wrap" class="viz-chart-wrap"></div>
 </div>
 
-<div class="delta" style="border-left-color:var(--red)">
+<div class="delta">
   <h3>Week-over-week movement</h3>
   <div class="tbl-wrap"><table class="cmp">
-    <tr><th>Metric</th><th>9 Jun</th><th>15 Jun</th><th>23 Jun</th><th>30 Jun</th><th>13 Jul</th><th>21 Jul</th><th>27 Jul</th><th>1 Sep</th><th>Change (27 Jul→1 Sep)</th></tr>
-    <tr><td>Complete (file in col O)</td><td class="num">137</td><td class="num">139</td><td class="num">142</td><td class="num">164</td><td class="num">172</td><td class="num">178</td><td class="num">179</td><td class="num">138</td><td class="restated">−41 (restated)</td></tr>
-    <tr><td>Outstanding</td><td class="num">92</td><td class="num">90</td><td class="num">87</td><td class="num">65</td><td class="num">57</td><td class="num">51</td><td class="num">50</td><td class="num">91</td><td class="restated">+41 (restated)</td></tr>
-    <tr><td>— in active batch</td><td class="num">68</td><td class="num">68</td><td class="num">72</td><td class="num">52</td><td class="num">50</td><td class="num">45</td><td class="num">44</td><td class="num">67</td><td class="restated">+23 (restated)</td></tr>
-    <tr><td>— pending confirmation</td><td class="num">24</td><td class="num">22</td><td class="num">15</td><td class="num">13</td><td class="num">7</td><td class="num">6</td><td class="num">6</td><td class="num">24</td><td class="restated">+18 (restated)</td></tr>
+    <tr><th>Metric</th><th>9 Jun</th><th>15 Jun</th><th>23 Jun</th><th>30 Jun</th><th>13 Jul</th><th>21 Jul</th><th>27 Jul</th><th>Change (21→27 Jul)</th></tr>
+    <tr><td>Complete (file in col O)</td><td class="num">137</td><td class="num">139</td><td class="num">142</td><td class="num">164</td><td class="num">172</td><td class="num">178</td><td class="num">179</td><td class="up">+1</td></tr>
+    <tr><td>Outstanding</td><td class="num">92</td><td class="num">90</td><td class="num">87</td><td class="num">65</td><td class="num">57</td><td class="num">51</td><td class="num">50</td><td class="up">−1</td></tr>
+    <tr><td>— in active batch</td><td class="num">68</td><td class="num">68</td><td class="num">72</td><td class="num">52</td><td class="num">50</td><td class="num">45</td><td class="num">44</td><td class="up">−1</td></tr>
+    <tr><td>— pending confirmation</td><td class="num">24</td><td class="num">22</td><td class="num">15</td><td class="num">13</td><td class="num">7</td><td class="num">6</td><td class="num">6</td><td class="flat">flat</td></tr>
   </table></div>
-  <p style="font-size:12px;margin-top:8px;color:#555"><b>This is a restatement, not a week of regression.</b> 41 units previously reported complete (see caveat above) had their col-O entries cleared as part of a sheet-wide correction — they were never actually done. Separately, Batch 17–20 were dissolved: 24 units (mostly ex-Batch 19, whose Sept target dates we'd flagged as unverified for weeks) moved back into Pending Confirmation. Zero genuine forward progress this period — no unit newly completed.</p>
+  <p style="font-size:12px;margin-top:8px;color:#555">Slowest period yet: only 1 net completion this week. Of 3 units with non-blank col O since last pull, only A-3A-3A is genuinely complete (real filename + signed date). A-13A-07 and A-07-02 both picked up the same bare-date-in-col-O defect that's affected A-07-03/A-03-06/A-18-08 — treated as still outstanding. Pending confirmation list, batch structure and Batch 19/20 target dates are all unchanged from 21 Jul.</p>
   <div class="moved">
-    <span class="chip"><b>41 units</b> → reverted from "complete" to outstanding: A-06-01, A-06-06, A-08-01, A-10-07, A-10-3A, A-05-03</span>
-    <span class="chip">A-12-07, A-13A-02, A-13A-05, A-13A-3A, A-15-01, A-15-06, A-16-01, A-16-07, A-16-3A</span>
-    <span class="chip">A-17-06, A-17-07, A-17-3A, A-18-06, A-21-02, A-21-03, A-22-08, A-23A-01, A-25-05</span>
-    <span class="chip">A-3A-05, A-3A-3A, B-11-03, B-11-06, B-12-03, B-13-06, B-13-08, B-15-05</span>
-    <span class="chip">B-18-06, B-19-05, B-19-06, B-20-05, B-21-06, B-23-05, B-23A-07, B-23A-08, B-26-3A</span>
-    <span class="chip"><b>Batches 17–20 dissolved</b> → their units moved into Pending Confirmation or renumbered into Batch 16</span>
-    <span class="chip"><b>0 units</b> → genuinely newly complete this period</span>
+    <span class="chip"><b>1 unit</b> → genuinely complete since 21 Jul: A-3A-3A</span>
+    <span class="chip"><b>A-13A-07, A-07-02</b> → newly show the false-positive col-O pattern (were correctly blank last week)</span>
+    <span class="chip"><b>A-07-03, A-03-06, A-18-08</b> → still false-positive, unresolved from 21 Jul</span>
+    <span class="chip"><b>B-12-07, A-25-07, A-20-07, A-23A-09, A-02-03A, A-02-02</b> → pending confirmation, unchanged from 21 Jul</span>
+    <span class="chip"><b>Batch 19/20 dates</b> → unchanged from 21 Jul; Jonathan's promised Lex follow-up still not reflected in the sheet</span>
   </div>
 </div>
 
 <!-- VELOCITY & FORECAST -->
-<div class="proj-box" style="border-left-color:var(--red);background:#fff4f0;border-color:#f0c4b8;">
-  <h3 style="color:var(--red)">Where things actually stand — 31 Aug has passed</h3>
-  <div style="background:#fff;border:1px solid #f0c4b8;border-radius:3px;padding:10px 12px;margin-bottom:12px;font-size:13px;">
-    No fresh WhatsApp checkpoint this round. Given the scale of the data correction above (see caveat box), the more useful conversation with Jonathan/Lex now is: what's the <b>real</b> plan from a corrected 138/229 baseline, not whether the old (inflated) numbers were on pace.
+<div class="proj-box">
+  <h3>Velocity &amp; Forecast — can we hit 31 Aug?</h3>
+  <div style="background:#fff;border:1px solid #b8dfc0;border-radius:3px;padding:10px 12px;margin-bottom:12px;font-size:13px;">
+    No fresh WhatsApp checkpoint this round — figures below are from the 27 Jul sheet pull. Last verbal checkpoint was still 16 Jul: Jonathan's promised Batch 19 date verification with Lex hasn't shown up in the sheet across two pulls now (21 Jul, 27 Jul) — worth chasing directly rather than waiting for the sheet to update.
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:10px;">
     <div>
-      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:12px;color:#555;margin-bottom:6px;">Jonathan's original projection <span style="color:#999;font-weight:500">(17 Jun, revised 2 Jul — never reconfirmed after that)</span></div>
+      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:12px;color:#555;margin-bottom:6px;">Jonathan's projection <span style="color:#999;font-weight:500">(17 Jun, End-Jul revised 2 Jul — not reconfirmed since)</span></div>
       <div class="tbl-wrap"><table class="cmp" style="font-size:12px;">
         <tr><th>Period</th><th style="text-align:center">In Reno</th><th style="text-align:center">Yet to start</th><th style="text-align:center">Total open</th></tr>
         <tr><td>Mid Jun</td><td class="num" style="text-align:center">68</td><td class="num" style="text-align:center">22</td><td class="num" style="text-align:center">90</td></tr>
         <tr><td>End Jul</td><td class="num" style="text-align:center">40</td><td class="num" style="text-align:center;color:var(--grn)"><b>&lt;5</b> <span style="color:#888;font-size:10px">(was 10)</span></td><td class="num" style="text-align:center">50</td></tr>
-        <tr><td>End Aug (target)</td><td class="num" style="text-align:center">12</td><td class="num" style="text-align:center">4</td><td class="num" style="text-align:center"><b>16</b></td></tr>
-        <tr><td><b>1 Sep (actual)</b></td><td class="num" style="text-align:center">67</td><td class="num" style="text-align:center">24</td><td class="num" style="text-align:center;color:var(--red)"><b>91</b></td></tr>
+        <tr><td>End Aug</td><td class="num" style="text-align:center">12</td><td class="num" style="text-align:center">4</td><td class="num" style="text-align:center" style="color:var(--red)"><b>16</b></td></tr>
+        <tr><td>End Sep</td><td class="num" style="text-align:center">3</td><td class="num" style="text-align:center">1</td><td class="num" style="text-align:center">4</td></tr>
       </table></div>
     </div>
     <div>
-      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:12px;color:#555;margin-bottom:6px;">What actually happened</div>
+      <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:12px;color:#555;margin-bottom:6px;">Run-rate check (sheet-derived)</div>
       <ul style="font-size:13px;margin:0;padding-left:18px;">
-        <li><b>31 Aug target: missed</b> — 91 open vs Jonathan's own forecast of 16. The gap was always bigger than reported; the correction just made it visible.</li>
-        <li><b>0 genuine completions</b> this period — the "progress" in every recent update was substantially the col-O data problem, not real throughput.</li>
-        <li><b>A-02-03A still unresolved</b> — owner still hasn't collected the key. Its own SDP void-deadline (31 Aug) has now also passed with no resolution shown on the sheet — worth confirming directly whether this unit was voided or the deadline quietly lapsed.</li>
-        <li><b>Batches 17–20 dissolved</b> — 24 units, including all of the Batch 19 Sept dates this dashboard flagged as unverified for 3 straight weeks, are back in Pending Confirmation. That flag turned out to be warranted.</li>
+        <li><b>Need:</b> ~10/week to clear 50 open units by 31 Aug (5 weeks left from 27 Jul)</li>
+        <li><b>Actual:</b> 1 genuine completion in ~1 week (21–27 Jul) — the slowest period yet, down from ~6/week the week before</li>
+        <li><b>Escalating data caveat:</b> false-positive col-O entries grew from 3 to 5 units this week (2 new: A-13A-07, A-07-02) — this looks like a live, ongoing process issue (people typing target dates into the wrong column), not a one-off. Worth flagging directly to whoever owns that column.</li>
+        <li><b>Confirmed risk (narrow):</b> Batch 19 (6 units) likely miss 31 Aug per Jonathan — still unverified with Lex after 2 weeks</li>
+        <li><b>Urgent:</b> A-02-03A — key still not collected; SDP deadline 31 Jul is now 4 days away</li>
+        <li><b>Real pressure:</b> Batch 15–20 — target dates run through 14 Sep, no slack</li>
       </ul>
     </div>
   </div>
-  <p style="font-size:12px;color:#555;margin:4px 0 0"><b>Recommendation:</b> don't set a new exit date off the old numbers. Now that col O has been cleaned up, get a fresh completion forecast from Jonathan/Lex against the corrected 138/229 baseline, and ask directly what happened with A-02-03A's lapsed SDP deadline.</p>
+  <p style="font-size:12px;color:#555;margin:4px 0 0"><b>Verdict:</b> 31 Aug looks increasingly unlikely — pace has collapsed to ~1/week against a ~10/week bar, on top of Batch 19's confirmed 6-unit slip. A-02-03A's SDP deadline (31 Jul) needs a decision in days, not weeks. Recommend raising the col-O data-entry pattern and Batch 19 date confirmation directly with Jonathan/Lex rather than waiting on the next sheet pull.</p>
 </div>
 
 <!-- PM LOAD -->
 <div class="box">
-  <h3>Workload by person — Pending (24) + In Reno (67)</h3>
-  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno units only (all 24 pending units are also under Lex).</p>
+  <h3>Workload by person — Pending (6) + In Reno (44)</h3>
+  <p style="font-size:12px;color:#555;margin:4px 0 12px">Designers showing "—" excluded. PM column = reno units only (all 6 pending units are also under Lex).</p>
   <div class="load-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:4px;">
     <div>
       <div style="font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.5px;font-size:13px;margin-bottom:6px;">Consultant</div>
@@ -212,16 +212,16 @@
   </div>
 </div>
 
-<h2>1 · Pending Confirmation (24) <span style="font-size:13px;color:#666">— not yet in a batch</span></h2>
-<p class="lead">Blocker category, status and target action pulled directly from the live sheet's own notes as of 1 Sep. This list nearly quadrupled this update — see the caveat box at the top: most of these are ex-Batch 17–20 units whose batch assignment turned out to be premature, now correctly shown as still blocked on defects or design plan sign-off.</p>
+<h2>1 · Pending Confirmation (6) <span style="font-size:13px;color:#666">— not yet in a batch</span></h2>
+<p class="lead">Blocker category, status and target action pulled directly from the live sheet's own notes as of 27 Jul. List unchanged from 21 Jul.</p>
 <div class="tbl-wrap"><table id="t-conf"></table></div>
 
-<h2>2 · In Renovation / Finishing (67) <span style="font-size:13px;color:#666">— scheduled, running the cycle</span></h2>
-<p class="lead">PM = Lex unless shown. &nbsp; <span style="color:var(--red);font-weight:700">Red ⚠</span> = target completion date already passed — most Batch 9–14 units show this, reflecting the programme's known slip. &nbsp;|&nbsp; Snapshot: 1 Sep. Batches now run only 1–16 (17–20 dissolved, see caveat above). The sheet's daily task grid still doesn't carry readable status text, so photo-done/handover-ready units aren't broken out separately — confirm with Lex/Syaharil directly.</p>
+<h2>2 · In Renovation / Finishing (44) <span style="font-size:13px;color:#666">— scheduled, running the cycle</span></h2>
+<p class="lead">PM = Lex unless shown. <span class="tag t-new">NEW</span> = entered Batch 20 this cycle. &nbsp; <span style="color:var(--red);font-weight:700">Red ⚠</span> = target completion date already passed — most Batch 9–14 units show this, reflecting the programme's known slip. &nbsp;|&nbsp; Snapshot: 27 Jul. The sheet's daily task grid still doesn't carry readable status text, so photo-done/handover-ready units aren't broken out separately — confirm with Lex/Syaharil directly. A-07-03, A-03-06, A-18-08, A-13A-07 and A-07-02 all carry a data-caveat note (see box above).</p>
 <div class="tbl-wrap"><table id="t-reno"></table></div>
 
 <div class="foot">
-  Tags: <span class="tag t-conf">CONFIRM</span> pending confirmation · <span class="tag t-reno">RENO</span> in cycle &nbsp;|&nbsp; <span style="color:var(--red);font-weight:700">RISK ⚠</span> = target date passed &nbsp;|&nbsp; Verify all data against the live sheet.
+  Tags: <span class="tag t-conf">CONFIRM</span> pending confirmation · <span class="tag t-reno">RENO</span> in cycle · <span class="tag t-new">NEW</span> newly scheduled (Batch 20) &nbsp;|&nbsp; <span style="color:var(--red);font-weight:700">RISK ⚠</span> = target date passed &nbsp;|&nbsp; Verify all data against the live sheet.
 </div>
 </div>
 
@@ -229,30 +229,12 @@
 // [unit, consultant, designer, category, status, targetAction]
 // category values: design | permit | defect | key | batch
 const conf = [
-  ["B-17-07","Anzzo","Atdee","design","Reno permit filed, key already collected — design plan not yet drafted/confirmed. No further notes on sheet.","Get design plan drafted and confirmed with owner"],
-  ["B-12-07","Luqman","Zaf","design","Design plan pending client confirmation. No permit filed yet.","Chase owner for design plan sign-off, then file permit"],
-  ["A-19-02","Lina","Adibah","design","Reno permit filed. Design plan still pending.","Confirm design plan with owner"],
-  ["A-07-01","Kavita","Nadia","design","Design plan drafted, not yet confirmed. No permit filed.","Confirm design plan with owner, then file permit"],
-  ["B-22-05","Karen","Nadia","design","Pending design plan signature & reno permit — targeted to settle this week.","Get design plan signed + permit filed this week"],
-  ["A-21-06","Sam Leong","Zaf","defect","Defect rectification in progress.","Complete defect fix, confirm with owner"],
-  ["A-11-05","Yit Soon","Nadia","key","Defect done. Pending key from developer & design plan.","Chase developer for key; confirm design plan"],
-  ["A-25-07","Yit Soon","Zaf","design","CE paid. Pending design plan confirmation from owner.","Chase owner for design plan confirmation"],
-  ["A-22-07","Yit Soon","Zaf","design","CE paid. Pending design plan confirmation from owner.","Chase owner for design plan confirmation"],
-  ["A-20-07","Yit Soon","Zaf","defect","Pending defects. Pending design plan confirmation from owner.","Resolve defects, then confirm design plan"],
-  ["B-26-03","Jonathan","—","batch","Design plan, permit and key all appear complete on the sheet — no open blocker noted.","Confirm status with Lex and re-batch if genuinely ready"],
-  ["A-21-08","Luqman","—","key","Design plan + permit ready. Key not yet collected.","Chase key collection"],
-  ["A-23A-08","Jon (was Elene)","—","design","CE paid. Pending design plan confirmation from owner.","Jon to chase design plan confirmation"],
-  ["A-23A-09","Jon (was Elene)","—","defect","CE paid. Pending defect. Pending design plan confirmation from owner.","Jon to resolve defect + chase design plan"],
-  ["A-27-05","Luqman","—","permit","Design plan appears signed. Permit not yet filed.","File reno permit"],
-  ["A-27-02","Kavita","—","design","Defects done. Pending sign design plan & permit.","Get design plan signed, then file permit"],
-  ["A-27-09","Kavita","—","defect","Pending defects. Pending sign design plan & permit.","Resolve defects, then sign design plan & permit"],
-  ["A-18-03","Lina","—","permit","Reno permit listed as pending. VO/design docs appear signed.","Chase permit approval"],
-  ["B-27-07","Samuel Kwan","—","defect","Pending defect.","Resolve defect"],
-  ["A-02-03A","Karen","—","key","Owner still hasn't collected key — sole blocker.","Chase key collection; consider SDP if still unresolved"],
-  ["A-26-02","Karen","—","design","Permit approved. Pending design plan signature — targeted this week.","Get design plan signed this week"],
-  ["A-02-02","Karen","—","defect","Defects in progress. Chasing design plan.","Resolve defects, chase design plan"],
-  ["A-13-06","Sam Leong","—","defect","Defects in progress. Chasing design plan approval this week.","Resolve defects, get design plan approved this week"],
-  ["A-12-06","Sam Leong","—","defect","Defects in progress. Chasing design plan approval this week.","Resolve defects, get design plan approved this week"],
+  ["B-12-07","Luqman","Zaf","design","Owner on work travel; tried to pay reno permit but connection was slow, will retry Monday (20 Jul). Pending: sign design plan, pay reno permit, pay PW4 endorsement.","Chase owner for DP signature + permit + PW4 payment"],
+  ["A-25-07","Yit Soon","Zaf","permit","Design plan signed. Owner signed reno permit 30 Jun — still pending approval.","Chase reno permit approval"],
+  ["A-20-07","Yit Soon","Zaf","design","Design plan + reno permit both pending. Zaf calling owner directly to discuss design plan while Yit Soon is away (20 Jul).","Zaf to close out design plan call with owner"],
+  ["A-23A-09","Jon (was Elene)","—","defect","Elene's unit, with Jon since her exit. Pending defect, design plan, permit & keys — all four blockers open.","Jon to resolve defect, design plan, permit & key together"],
+  ["A-02-03A","Karen","—","key","Owner still hasn't collected key — sole blocker.","Hold to 31 Jul SDP deadline; void if uncollected by 31 Aug"],
+  ["A-02-02","Karen","—","defect","Defects in progress. Owner yet to confirm design plan.","Resolve defects → chase design plan confirmation"],
 ];
 
 const catLabel = {
@@ -267,73 +249,50 @@ const catLabel = {
 
 const reno = [
  // [unit, consultant, designer, pm, targetDate, altDate, statusNote, tag, isDoubtful, isNew, batch]
-  ["A-10-3A","Kavita","Marsha","Lex","27/3/26","4/11/26","In reno — built-in","reno",false,false,8],
-  ["B-13-08","Anzzo","—","Lex","4/10/26","—","In reno","reno",false,false,9],
-  ["A-18-06","Sam Leong","—","Lex","18/4/26","4/11/26","In reno","reno",false,false,9],
-  ["B-19-06","Michelle","—","Lex","—","31/3/26","In reno","reno",false,false,9],
-  ["A-25-05","Kavita","—","Lex","23/4/26","—","In reno","reno",false,false,9],
-  ["A-16-3A","Anzzo","Zaf","Lex","25/4/26","—","In reno — built-in","reno",false,false,9],
-  ["A-18-08","Sam Leong","Nadia","Lex","18/4/26","—","In reno — built-in","reno",false,false,9],
-  ["B-23A-07","Lina","Adibah","Lex","23/4/26","—","In reno — built-in","reno",false,false,9],
-  ["A-13A-05","Anzzo","Marsha","Lex","5/2/26","—","In reno","reno",false,false,10],
-  ["B-19-05","XiaoXue","—","Lex","5/6/26","—","In reno","reno",false,false,10],
-  ["A-03-01","Elene","Marsha","Lex","17/5/26","—","In reno — built-in","reno",false,false,10],
+  ["A-18-08","Sam Leong","Nadia","Lex","18/4/26","—","In reno — built-in ⚠ col O shows a future date (29/7/26), not a file; no HO signed date. Discovered 21 Jul — was silently counted complete in the 30 Jun/13 Jul totals. Sheet note says 'Ownstay completed' — still unconfirmed with Lex.","reno",false,false,9],
+  ["A-03-01","Jonathan","Marsha","Lex","17/5/26","—","In reno — built-in","reno",false,false,10],
   ["B-25-07","Samuel Kwan","Qat","Lex","13/5/26","—","In reno — built-in","reno",false,false,10],
-  ["A-10-07","Kavita","Nadia","Lex","30/4/26","—","In reno — built-in","reno",false,false,10],
-  ["A-06-06","Sam Leong","—","Syaharil","14/5/26","15/5/26","In reno","reno",false,false,11],
-  ["B-11-03","Kavita","—","Syaharil","6/6/26","—","In reno","reno",false,false,11],
-  ["A-06-01","Kavita","—","Syaharil","6/6/26","—","In reno","reno",false,false,11],
-  ["A-23A-01","Luqman","—","Syaharil","30/4/26","30/4/26","In reno","reno",false,false,11],
-  ["A-3A-05","Kavita","—","Syaharil","6/12/26","—","In reno","reno",false,false,11],
-  ["A-08-01","Elene","Marsha","Syaharil","30/5/26","—","In reno","reno",false,false,11],
-  ["B-26-3A","Luqman","—","Syaharil","6/12/26","—","In reno","reno",false,false,11],
-  ["B-12-03","Kavita","Nadia","Syaharil","30/5/26","—","In reno — built-in","reno",false,false,11],
-  ["A-16-01","Sam Leong","Atdee","Syaharil","21/5/26","—","In reno — built-in","reno",false,false,11],
-  ["A-12-07","Anzzo","Zaf","Syaharil","6/4/26","—","In reno — built-in","reno",false,false,11],
-  ["B-20-05","Sam Leong","Marsha","Syaharil","6/6/26","—","In reno — built-in","reno",false,false,11],
-  ["A-21-02","Kavita","Nadia","Syaharil","6/10/26","—","In reno — built-in","reno",false,false,11],
-  ["A-05-03","Lina","Nadia","Syaharil","28/5/26","—","In reno — built-in","reno",false,false,11],
-  ["B-11-06","Kavita","Marsha","Syaharil","6/8/26","—","In reno — built-in","reno",false,false,11],
-  ["A-07-03","Jonathan","Marsha","Syaharil","30/6/26","—","In reno — built-in","reno",false,false,11],
-  ["A-17-3A","Sam Leong","—","Lex","6/6/26","—","In reno","reno",false,false,12],
-  ["B-23-05","Karen","—","Lex","6/6/26","—","In reno","reno",false,false,12],
-  ["B-23A-08","Yit Soon","Adibah","Lex","6/7/26","—","In reno — built-in","reno",false,false,12],
-  ["B-15-05","XiaoXue","Nadia","Lex","17/6/26","—","In reno — built-in","reno",false,false,12],
-  ["A-16-07","Sam Leong","Nadia","Lex","6/7/26","—","In reno — built-in","reno",false,false,12],
-  ["A-17-06","Sam Leong","Nadia","Lex","6/7/26","—","In reno — built-in","reno",false,false,12],
-  ["A-22-08","XiaoXue","Qat","Lex","6/8/26","—","In reno — built-in","reno",false,false,12],
-  ["A-13A-3A","Anzzo","—","Lex","13/6/26","—","In reno","reno",false,false,13],
-  ["B-20-06","Anzzo","—","Lex","20/6/26","—","In reno","reno",false,false,13],
-  ["A-13A-02","Kavita","Nadia","Lex","6/8/26","—","In reno — built-in","reno",false,false,13],
-  ["B-13-06","Anzzo","Atdee","Lex","20/6/26","—","In reno — built-in","reno",false,false,13],
+  ["A-07-03","Jonathan","Marsha","Syaharil","30/6/26","—","In reno — built-in ⚠ col O still shows a placeholder date (now 31/7/26, pushed from 27/7/26 last week), not a file; no HO signed date. Jonathan confirmed 16 Jul: still in progress, directly handling it (QCing + fixing defects). Technically complex — home karaoke, sound insulation, smart home; owner ok with timeline.","reno",false,false,11],
+  ["B-20-06","Anzzo","—","Lex","20/6/26","30/7/26","In reno","reno",false,false,13],
   ["B-16-3A","Anzzo","Zaf","Lex","22/6/26","—","In reno — built-in","reno",false,false,13],
-  ["B-18-06","Lina","Zaf","Lex","19/6/26","—","In reno — built-in","reno",false,false,13],
-  ["A-21-03","Anzzo","Zaf","Lex","14/6/26","—","In reno — built-in","reno",false,false,13],
   ["B-21-05","Yit Soon","Nadia","Lex","27/6/26","—","In reno — built-in","reno",false,false,13],
-  ["B-21-06","Luqman","Marsha","Lex","14/6/26","—","In reno — built-in","reno",false,false,13],
-  ["A-15-06","Anzzo","—","Lex","27/6/26","—","In reno","reno",false,false,14],
   ["A-20-01","Lina","—","Lex","29/6/26","—","In reno","reno",false,false,14],
   ["A-20-3A","Lina","—","Lex","29/6/26","—","In reno","reno",false,false,14],
-  ["B-23-07","Karen","—","Lex","7/4/26","—","In reno","reno",false,false,14],
-  ["B-27-03","Luqman","—","Lex","7/4/26","—","In reno","reno",false,false,14],
-  ["A-03-06","Elene","Nadia","Lex","27/6/26","—","In reno — built-in","reno",false,false,14],
+  ["B-23-07","Karen","—","Lex","4/7/26","—","In reno","reno",false,false,14],
+  ["B-27-03","Luqman","—","Lex","4/7/26","—","In reno","reno",false,false,14],
+  ["A-03-06","Jonathan","Nadia","Lex","27/6/26","—","In reno — built-in ⚠ col O shows a date (27/7/26), not a file; no HO signed date. Same pattern as A-07-03/A-18-08 — treated as still outstanding.","reno",false,false,14],
   ["B-11-07","Samuel Kwan","Zaf","Lex","27/6/26","—","In reno — built-in","reno",false,false,14],
-  ["A-15-01","Sam Leong","Marsha","Lex","27/6/26","—","In reno — built-in","reno",false,false,14],
-  ["A-15-05","Anzzo","Zaf","Lex","27/6/26","—","In reno — built-in","reno",false,false,14],
+  ["A-15-05","Anzzo","Zaf","Lex","27/6/26","30/7/26","In reno — built-in","reno",false,false,14],
   ["A-18-07","Sam Leong","Marsha","Lex","22/6/26","—","In reno — built-in","reno",false,false,14],
-  ["A-3A-3A","Kavita","—","Lex","21/7/26","—","In reno","reno",false,false,15],
-  ["A-11-02","Yit Soon","—","Lex","7/11/26","29/6/26","In reno","reno",false,false,15],
-  ["B-18-07","XiaoXue","—","Lex","7/11/26","—","In reno","reno",false,false,15],
-  ["A-09-02","Jonathan","Zaf","Lex","21/7/26","—","In reno — built-in","reno",false,false,15],
-  ["A-10-06","Kavita","Nadia","Lex","7/11/26","—","In reno — built-in","reno",false,false,15],
-  ["A-13A-07","Yit Soon","Zaf","Lex","21/7/26","16/7/26","In reno — built-in","reno",false,false,15],
-  ["A-17-07","XiaoXue","Nadia","Lex","21/7/26","—","In reno — built-in","reno",false,false,15],
+  ["B-18-07","XiaoXue","—","Lex","17/7/26","—","In reno","reno",false,false,15],
+  ["A-11-02","Yit Soon","—","Lex","31/7/26","29/6/26","In reno","reno",false,false,15],
+  ["A-13A-07","Yit Soon","Zaf","Lex","21/7/26","16/7/26","In reno — built-in ⚠ NEW this week — col O now shows a bare date (28/7/26) instead of a file, no HO signed date. Was blank (correctly incomplete) last week; someone's typed a date into the wrong column since.","reno",false,false,15],
   ["A-17-08","Anzzo","Zaf","Lex","19/7/26","—","In reno — built-in","reno",false,false,15],
-  ["A-07-02","Yit Soon","—","Lex","26/7/26","—","In reno","reno",false,false,16],
-  ["B-26-08","Yit Soon","Zaf","Lex","8/1/26","—","In reno","reno",false,false,16],
-  ["B-17-06","Anzzo","Zaf","Lex","—","—","In reno — built-in","reno",false,false,16],
-  ["A-23-06","Yit Soon","Adibah","Lex","—","—","In reno — built-in","reno",false,false,16],
-  ["B-27-05","Samuel Kwan","Nadia","Lex","8/1/26","—","In reno — built-in","reno",false,false,16],
+  ["A-09-02","Jonathan","Zaf","Lex","31/7/26","—","In reno — built-in","reno",false,false,15],
+  ["A-10-06","Kavita","Nadia","Lex","31/7/26","—","In reno — built-in","reno",false,false,15],
+  ["A-07-02","Yit Soon","—","Lex","26/7/26","—","In reno ⚠ NEW this week — col O now shows a bare date (23/7/26) instead of a file, no HO signed date. Was blank (correctly incomplete) last week; someone's typed a date into the wrong column since.","reno",false,false,16],
+  ["B-26-08","Yit Soon","Zaf","Lex","1/8/26","—","In reno","reno",false,false,16],
+  ["A-23-06","Yit Soon","Adibah","Lex","10/8/26","—","In reno — built-in","reno",false,false,16],
+  ["B-27-05","Samuel Kwan","Nadia","Lex","1/8/26","—","In reno — built-in","reno",false,false,16],
+  ["A-21-08","Luqman","—","Lex","11/8/26","—","In reno","reno",false,false,17],
+  ["A-11-05","Yit Soon","Nadia","Lex","16/8/26","—","In reno — built-in","reno",false,false,17],
+  ["B-17-06","Kavita","Zaf","Lex","16/8/26","—","In reno — built-in","reno",false,false,17],
+  ["B-17-07","Anzzo","Atdee","Lex","16/8/26","30/8/26","In reno — built-in","reno",false,false,17],
+  ["A-18-03","Lina","—","Lex","22/8/26","—","In reno","reno",false,false,18],
+  ["A-26-02","Karen","—","Lex","22/8/26","—","In reno","reno",false,false,18],
+  ["B-26-03","Jonathan","—","Lex","29/8/26","—","In reno","reno",false,false,18],
+  ["A-27-02","Kavita","—","Lex","3/9/26","—","In reno","reno",false,false,18],
+  ["A-27-05","Luqman","—","Lex","29/8/26","—","In reno","reno",false,false,18],
+  ["A-27-09","Kavita","—","Lex","22/8/26","—","In reno","reno",false,false,18],
+  ["A-07-01","Kavita","Nadia","Lex","22/8/26","—","In reno — built-in","reno",false,false,18],
+  ["A-19-02","Lina","Zaf","Lex","22/8/26","—","In reno — built-in","reno",false,false,18],
+  ["A-12-06","Sam Leong","—","Lex","14/9/26","—","In reno","reno",false,false,19],
+  ["A-13-06","Sam Leong","—","Lex","14/9/26","—","In reno","reno",false,false,19],
+  ["A-23A-08","Jon (was Elene)","—","Lex","14/9/26","—","In reno","reno",false,false,19],
+  ["B-27-07","Samuel Kwan","—","Lex","4/9/26","—","In reno","reno",false,false,19],
+  ["A-21-06","Sam Leong","Zaf","Lex","14/9/26","—","In reno — built-in","reno",false,false,19],
+  ["A-22-07","Yit Soon","Zaf","Lex","14/9/26","—","In reno — built-in","reno",false,false,19],
+  ["B-22-05","Karen","Nadia","Lex","—","—","Just started — built-in. Sheet still shows a status note (\"Can start, pending PW4 endorsement\") instead of a date — unchanged from 21 Jul.","new",true,true,20],
 ];
 
 function tagHtml(t){
@@ -363,7 +322,7 @@ function parseDate(s){
   const [d,m,y] = parts.map(Number);
   return new Date(2000+y, m-1, d);
 }
-const today = new Date(2026,8,1);
+const today = new Date(2026,6,27);
 
 function dateCls(dateStr, isDoubtful){
   const d = parseDate(dateStr);
@@ -430,12 +389,12 @@ renderLoadTable('load-designer',   countBy(conf,2), countBy(reno,2));
 renderLoadTable('load-pm',         {},              countBy(reno,3));
 
 // ---- TREND CHART ----
-const trendDates = ["9 Jun","15 Jun","23 Jun","30 Jun","13 Jul","21 Jul","27 Jul","1 Sep*"];
+const trendDates = ["9 Jun","15 Jun","23 Jun","30 Jun","13 Jul","21 Jul","27 Jul"];
 const trendSeries = [
-  {key:"complete", name:"Complete",            color:"var(--s1)", hex:"#2a78d6", values:[137,139,142,164,172,178,179,138]},
-  {key:"outstanding", name:"Outstanding",      color:"var(--s2)", hex:"#eb6834", values:[92,90,87,65,57,51,50,91]},
-  {key:"inbatch", name:"In active batch",      color:"var(--s3)", hex:"#1baf7a", values:[68,68,72,52,50,45,44,67]},
-  {key:"pending", name:"Pending confirmation", color:"var(--s4)", hex:"#eda100", values:[24,22,15,13,7,6,6,24]},
+  {key:"complete", name:"Complete",            color:"var(--s1)", hex:"#2a78d6", values:[137,139,142,164,172,178,179]},
+  {key:"outstanding", name:"Outstanding",      color:"var(--s2)", hex:"#eb6834", values:[92,90,87,65,57,51,50]},
+  {key:"inbatch", name:"In active batch",      color:"var(--s3)", hex:"#1baf7a", values:[68,68,72,52,50,45,44]},
+  {key:"pending", name:"Pending confirmation", color:"var(--s4)", hex:"#eda100", values:[24,22,15,13,7,6,6]},
 ];
 
 document.getElementById('trend-legend').innerHTML = trendSeries.map(s =>
